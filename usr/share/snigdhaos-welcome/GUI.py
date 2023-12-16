@@ -16,7 +16,7 @@ username = getpass.getuser()
 if DEBUG:
     user = username
 else:
-    user = "liveuser"
+    user = "snigdha"
 
 Settings = home + "/.config/snigdhaos-welcome/settings.conf"
 Skel_Settings = "/etc/skel/.config/snigdhaos-welcome/settings.conf"
