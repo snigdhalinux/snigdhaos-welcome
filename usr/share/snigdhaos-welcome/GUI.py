@@ -208,32 +208,32 @@ def GUI(self, Gtk, GdkPixbuf):
     # ======================================================================
 
     # change this one every year
-    button3 = Gtk.Button(label="Release info")
+    button3 = Gtk.Button(label="Github")
     button3.connect("clicked", self.on_link_clicked,
-                    "https://eshanizedos.github.io/")
+                    "https://github.com/snigdhalinux")
     button3.set_size_request(180, 50)
 
-    button4 = Gtk.Button(label="Choose your project")
-    button4.connect("clicked", self.on_link_clicked,
-                    "https://eshanizedos.github.io/")
-    button4.set_size_request(180, 50)
+    # button4 = Gtk.Button(label="Choose your project")
+    # button4.connect("clicked", self.on_link_clicked,
+                    # "https://eshanizedos.github.io/")
+    # button4.set_size_request(180, 50)
 
-    button5 = Gtk.Button(label="Core info")
-    button5.connect("clicked", self.on_link_clicked,
-                    "https://eshanizedos.github.io/")
-    button5.set_size_request(180, 50)
+    # button5 = Gtk.Button(label="Core info")
+    # button5.connect("clicked", self.on_link_clicked,
+    #                 "https://eshanizedos.github.io/")
+    # button5.set_size_request(180, 50)
 
-    button6 = Gtk.Button(label="Fast track")
+    button6 = Gtk.Button(label="Report Issue")
     button6.connect("clicked", self.on_link_clicked,
-                    "https://eshanizedos.github.io/")
+                    "https://github.com/snigdhalinux/snigdhaos-archiso-zen/issues")
     button6.set_size_request(180, 50)
 
-    button7 = Gtk.Button(label="Forum")
+    button7 = Gtk.Button(label="Forum(Coming Soon!)")
     button7.connect("clicked", self.on_link_clicked,
-                    "https://eshanizedos.github.io/")
+                    "https://snigdhalinux.github.io/")
     button7.set_size_request(180, 50)
 
-    button70 = Gtk.Button(label="Screen resolution")
+    button70 = Gtk.Button(label="Fix Resolution")
     button70.set_size_request(180, 50)
     button70.set_property("has-tooltip", True)
     button70.connect("query-tooltip",
@@ -242,8 +242,8 @@ def GUI(self, Gtk, GdkPixbuf):
     button70.connect("clicked", self.on_buttonarandr_clicked)
 
     hbox2.pack_start(button3, True, True, 0)
-    hbox2.pack_start(button4, True, True, 0)
-    hbox2.pack_start(button5, True, True, 0)
+    # hbox2.pack_start(button4, True, True, 0)
+    # hbox2.pack_start(button5, True, True, 0)
     hbox2.pack_start(button6, True, True, 0)
     hbox2.pack_start(button7, True, True, 0)
     hbox2.pack_start(button70, True, True, 0)
@@ -254,13 +254,13 @@ def GUI(self, Gtk, GdkPixbuf):
     button8.connect("clicked", self.on_link_clicked,
                     "https://eshanizedos.github.io/")
 
-    button9 = Gtk.Button(label="Get Involved - Betatester")
+    button9 = Gtk.Button(label="Register For Beta(Coming Soon!)")
     button9.connect("clicked", self.on_link_clicked,
-                    "https://eshanizedos.github.io/")
+                    "https://snigdhalinux.github.io/")
 
-    button10 = Gtk.Button(label="Get Involved - AAG")
-    button10.connect("clicked", self.on_link_clicked,
-                     "https://eshanizedos.github.io/")
+    # button10 = Gtk.Button(label="Get Involved - AAG")
+    # button10.connect("clicked", self.on_link_clicked,
+    #                  "https://eshanizedos.github.io/")
 
     button11 = Gtk.Button(label="Youtube")
     button11.connect("clicked", self.on_link_clicked,
@@ -273,7 +273,7 @@ def GUI(self, Gtk, GdkPixbuf):
 
     hbox5.pack_start(button8, True, True, 0)
     hbox5.pack_start(button9, True, True, 0)
-    hbox5.pack_start(button10, True, True, 0)
+    # hbox5.pack_start(button10, True, True, 0)
     hbox5.pack_start(button11, True, True, 0)
     hbox5.pack_start(button12, True, True, 0)
 
