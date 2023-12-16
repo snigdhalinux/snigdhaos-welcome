@@ -84,7 +84,7 @@ def GUI(self, Gtk, GdkPixbuf):
             # "We communicate with our community via a diversity of social media." +  # noqa
             # "Do join us to learn the latest news, ask questions or for casual talk.\n" +  # noqa
             # "<b>Telegram</b> is for chitchat - <b>Discord</b> is for assistance.\n" +  # noqa
-            "We have a <b>forum</b> for the longer and more technical questions.\n")
+            "We are working on <b>Snigdha OS forum</b> for user support!\n")
         label_warning.set_markup(
             "\n<span size='x-large'><b>Use the Offline Installation\n" + # noqa
             "if the Online Installation fails</b></span>\n")  # noqa
