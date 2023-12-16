@@ -311,9 +311,9 @@ def GUI(self, Gtk, GdkPixbuf):
         os.path.join(base_dir, 'images/twitter.png'), 28, 28)
     timage = Gtk.Image().new_from_pixbuf(pbt)
 
-    pbme = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/mewe.png'), 23, 23)
-    meimage = Gtk.Image().new_from_pixbuf(pbme)
+    # pbme = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/mewe.png'), 23, 23)
+    # meimage = Gtk.Image().new_from_pixbuf(pbme)
 
     pbin = GdkPixbuf.Pixbuf().new_from_file_at_size(
         os.path.join(base_dir, 'images/insta.png'), 28, 28)
@@ -345,7 +345,7 @@ def GUI(self, Gtk, GdkPixbuf):
 
     fbE.add(fbimage)
     tE.add(timage)
-    meE.add(meimage)
+    # meE.add(meimage)
     inE.add(inimage)
     liE.add(liimage)
     pE.add(pimage)
@@ -358,8 +358,8 @@ def GUI(self, Gtk, GdkPixbuf):
                 "https://www.facebook.com/eshanized")
     tE.connect("button_press_event", self.on_social_clicked,
                "https://twitter.com/eshanized")
-    meE.connect("button_press_event", self.on_social_clicked,
-                "#")
+    # meE.connect("button_press_event", self.on_social_clicked,
+    #             "#")
     inE.connect("button_press_event", self.on_social_clicked,
                 "https://www.instagram.com/eshanized/")
     liE.connect("button_press_event", self.on_social_clicked,
