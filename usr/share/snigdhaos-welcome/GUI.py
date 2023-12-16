@@ -269,7 +269,7 @@ def GUI(self, Gtk, GdkPixbuf):
     button12 = Gtk.Button(label="Exit")
     button12.set_size_request(200, 50)
     button12.connect("clicked", Gtk.main_quit)
-    #button12.set_tooltip_markup("Quit the ArcoLinux Welcome App")
+    button12.set_tooltip_markup("Quit Snigdha OS Welcome App")
 
     hbox5.pack_start(button8, True, True, 0)
     hbox5.pack_start(button9, True, True, 0)
