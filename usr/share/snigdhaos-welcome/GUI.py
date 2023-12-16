@@ -323,9 +323,9 @@ def GUI(self, Gtk, GdkPixbuf):
         os.path.join(base_dir, 'images/linkedin.png'), 28, 28)
     liimage = Gtk.Image().new_from_pixbuf(pbli)
 
-    pbp = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/patreon.png'), 28, 28)
-    pimage = Gtk.Image().new_from_pixbuf(pbp)
+    # pbp = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/patreon.png'), 28, 28)
+    # pimage = Gtk.Image().new_from_pixbuf(pbp)
 
     pby = GdkPixbuf.Pixbuf().new_from_file_at_size(
         os.path.join(base_dir, 'images/youtube.png'), 28, 28)
@@ -335,24 +335,24 @@ def GUI(self, Gtk, GdkPixbuf):
         os.path.join(base_dir, 'images/discord.png'), 28, 28)
     dimage = Gtk.Image().new_from_pixbuf(pbd)
 
-    pbtg = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/tg.png'), 28, 28)
-    tgimage = Gtk.Image().new_from_pixbuf(pbtg)
+    # pbtg = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/tg.png'), 28, 28)
+    # tgimage = Gtk.Image().new_from_pixbuf(pbtg)
 
-    pbel = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/element.png'), 28, 28)
-    elimage = Gtk.Image().new_from_pixbuf(pbel)
+    # pbel = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/element.png'), 28, 28)
+    # elimage = Gtk.Image().new_from_pixbuf(pbel)
 
     fbE.add(fbimage)
     tE.add(timage)
     # meE.add(meimage)
     inE.add(inimage)
     liE.add(liimage)
-    pE.add(pimage)
+    # pE.add(pimage)
     yE.add(yimage)
     dE.add(dimage)
-    tgE.add(tgimage)
-    elE.add(elimage)
+    # tgE.add(tgimage)
+    # elE.add(elimage)
 
     fbE.connect("button_press_event", self.on_social_clicked,
                 "https://www.facebook.com/eshanized")
@@ -364,16 +364,16 @@ def GUI(self, Gtk, GdkPixbuf):
                 "https://www.instagram.com/eshanized/")
     liE.connect("button_press_event", self.on_social_clicked,
                 "https://www.linkedin.com/in/eshanized/")
-    pE.connect("button_press_event", self.on_social_clicked,
-               "https://www.patreon.com/eshanized")
+    # pE.connect("button_press_event", self.on_social_clicked,
+    #            "https://www.patreon.com/eshanized")
     yE.connect("button_press_event", self.on_social_clicked,
                "https://youtube.com/c/eshanized")
     dE.connect("button_press_event", self.on_social_clicked,
                "#")
-    tgE.connect("button_press_event", self.on_social_clicked,
-                "#")
-    elE.connect("button_press_event", self.on_social_clicked,
-                "#")
+    # tgE.connect("button_press_event", self.on_social_clicked,
+    #             "#")
+    # elE.connect("button_press_event", self.on_social_clicked,
+    #             "#")
 
     fbE.set_property("has-tooltip", True)
     tE.set_property("has-tooltip", True)
