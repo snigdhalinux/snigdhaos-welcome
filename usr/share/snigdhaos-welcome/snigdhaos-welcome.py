@@ -207,7 +207,7 @@ Do you want to install it?")
             if not self.is_connected():
                 dis = 1
                 GLib.idle_add(self.button8.set_sensitive, False)
-                GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b><i>You are connected to internet!</i></b> \nCalamares will <b>not</b> install additional software</span>")  # noqa
+                GLib.idle_add(self.cc.set_markup, "<span foreground='red'><b><i>You are connected to internet!</i></b> \nCalamares will <b>not</b> install additional software</span>")  # noqa
             else:
                 if bb == 0 and dis == 1:
                     GLib.idle_add(self.button8.set_sensitive, True)
@@ -232,7 +232,7 @@ Do you want to install it?")
     #     md.destroy()
 
     def mirror_update(self):
-        GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b><i>Updating mirrorlist</i></b> \nThis may take some time, please wait...</span>")  # noqa
+        GLib.idle_add(self.cc.set_markup, "<span foreground='teal'><b><i>Updating mirrorlist</i></b> \nThis may take some time, please wait...</span>")  # noqa
         GLib.idle_add(self.button8.set_sensitive, False)
         subprocess.run(["pkexec", "/usr/bin/reflector", "--age", "6", "--latest", "21", "--fastest", "21", "--threads", "21", "--sort", "rate", "--protocol", "https", "--save", "/etc/pacman.d/mirrorlist"], shell=False)
         print("DONE!!!")
