@@ -61,7 +61,7 @@ def GUI(self, Gtk, GdkPixbuf):
 
     label = Gtk.Label(xalign=0)
     label.set_markup(
-        "<big>Welcome to <b>Snigdha OS (HawkEye)</b></big>")
+        "<big>Welcome to <b>SNIGDHA OS(HawkEye)</b></big>")
     label.set_line_wrap(True)
 
     # pixbuf = GdkPixbuf.Pixbuf().new_from_file_at_size(
@@ -86,8 +86,8 @@ def GUI(self, Gtk, GdkPixbuf):
             # "<b>Telegram</b> is for chitchat - <b>Discord</b> is for assistance.\n" +  # noqa
             "We are working on <b>Snigdha OS forum</b> for user support!\n")
         label_warning.set_markup(
-            "\n<span size='x-large'><b>Use the Offline Installation\n" + # noqa
-            "if the Online Installation fails</b></span>\n")  # noqa
+            "\n<span size='x-large'><b>Start Offline Installation\n" + # noqa
+            "incase Online Installation fails!</b></span>\n")  # noqa
     else:
         label2.set_markup("The links below will get you started on Snigdha OS. We communicate with our community via Forum.\n"
                           "Do join us to learn the latest news, ask questions or for casual talk.\n" +  # noqa
