@@ -207,7 +207,7 @@ Do you want to install it?")
             if not self.is_connected():
                 dis = 1
                 GLib.idle_add(self.button8.set_sensitive, False)
-                GLib.idle_add(self.cc.set_markup, "<span foreground='red'><b><i>You are connected to internet!</i></b> \nCalamares will <b>not</b> install additional software</span>")  # noqa
+                GLib.idle_add(self.cc.set_markup, "<span foreground='red'><b><i>No Internet Connection!</i></b> \nSnigdha OS will <b>not</b> install additional software</span>")  # noqa
             else:
                 if bb == 0 and dis == 1:
                     GLib.idle_add(self.button8.set_sensitive, True)
