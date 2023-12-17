@@ -292,48 +292,48 @@ def GUI(self, Gtk, GdkPixbuf):
     # ======================================================================
     #                   SOCIAL LINKS
     # ======================================================================
-    fbE = Gtk.EventBox()
-    tE = Gtk.EventBox()
-    meE = Gtk.EventBox()
-    inE = Gtk.EventBox()
-    liE = Gtk.EventBox()
-    pE = Gtk.EventBox()
-    yE = Gtk.EventBox()
-    dE = Gtk.EventBox()
-    tgE = Gtk.EventBox()
-    elE = Gtk.EventBox()
+    # fbE = Gtk.EventBox()
+    # tE = Gtk.EventBox()
+    # meE = Gtk.EventBox()
+    # inE = Gtk.EventBox()
+    # liE = Gtk.EventBox()
+    # pE = Gtk.EventBox()
+    # yE = Gtk.EventBox()
+    # dE = Gtk.EventBox()
+    # tgE = Gtk.EventBox()
+    # elE = Gtk.EventBox()
 
-    pbfb = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/facebook.png'), 28, 28)
-    fbimage = Gtk.Image().new_from_pixbuf(pbfb)
+    # pbfb = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/facebook.png'), 28, 28)
+    # fbimage = Gtk.Image().new_from_pixbuf(pbfb)
 
-    pbt = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/twitter.png'), 28, 28)
-    timage = Gtk.Image().new_from_pixbuf(pbt)
+    # pbt = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/twitter.png'), 28, 28)
+    # timage = Gtk.Image().new_from_pixbuf(pbt)
 
-    # pbme = GdkPixbuf.Pixbuf().new_from_file_at_size(
-    #     os.path.join(base_dir, 'images/mewe.png'), 23, 23)
-    # meimage = Gtk.Image().new_from_pixbuf(pbme)
+    # # pbme = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    # #     os.path.join(base_dir, 'images/mewe.png'), 23, 23)
+    # # meimage = Gtk.Image().new_from_pixbuf(pbme)
 
-    pbin = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/insta.png'), 28, 28)
-    inimage = Gtk.Image().new_from_pixbuf(pbin)
+    # pbin = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/insta.png'), 28, 28)
+    # inimage = Gtk.Image().new_from_pixbuf(pbin)
 
-    pbli = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/linkedin.png'), 28, 28)
-    liimage = Gtk.Image().new_from_pixbuf(pbli)
+    # pbli = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/linkedin.png'), 28, 28)
+    # liimage = Gtk.Image().new_from_pixbuf(pbli)
 
-    # pbp = GdkPixbuf.Pixbuf().new_from_file_at_size(
-    #     os.path.join(base_dir, 'images/patreon.png'), 28, 28)
-    # pimage = Gtk.Image().new_from_pixbuf(pbp)
+    # # pbp = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    # #     os.path.join(base_dir, 'images/patreon.png'), 28, 28)
+    # # pimage = Gtk.Image().new_from_pixbuf(pbp)
 
-    pby = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/youtube.png'), 28, 28)
-    yimage = Gtk.Image().new_from_pixbuf(pby)
+    # pby = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/youtube.png'), 28, 28)
+    # yimage = Gtk.Image().new_from_pixbuf(pby)
 
-    pbd = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, 'images/discord.png'), 28, 28)
-    dimage = Gtk.Image().new_from_pixbuf(pbd)
+    # pbd = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, 'images/discord.png'), 28, 28)
+    # dimage = Gtk.Image().new_from_pixbuf(pbd)
 
     # pbtg = GdkPixbuf.Pixbuf().new_from_file_at_size(
     #     os.path.join(base_dir, 'images/tg.png'), 28, 28)
@@ -343,74 +343,74 @@ def GUI(self, Gtk, GdkPixbuf):
     #     os.path.join(base_dir, 'images/element.png'), 28, 28)
     # elimage = Gtk.Image().new_from_pixbuf(pbel)
 
-    fbE.add(fbimage)
-    tE.add(timage)
-    # meE.add(meimage)
-    inE.add(inimage)
-    liE.add(liimage)
-    # pE.add(pimage)
-    yE.add(yimage)
-    dE.add(dimage)
-    # tgE.add(tgimage)
-    # elE.add(elimage)
+    # fbE.add(fbimage)
+    # tE.add(timage)
+    # # meE.add(meimage)
+    # inE.add(inimage)
+    # liE.add(liimage)
+    # # pE.add(pimage)
+    # yE.add(yimage)
+    # dE.add(dimage)
+    # # tgE.add(tgimage)
+    # # elE.add(elimage)
 
-    fbE.connect("button_press_event", self.on_social_clicked,
-                "https://www.facebook.com/eshanized")
-    tE.connect("button_press_event", self.on_social_clicked,
-               "https://twitter.com/eshanized")
-    # meE.connect("button_press_event", self.on_social_clicked,
-    #             "#")
-    inE.connect("button_press_event", self.on_social_clicked,
-                "https://www.instagram.com/eshanized/")
-    liE.connect("button_press_event", self.on_social_clicked,
-                "https://www.linkedin.com/in/eshanized/")
-    # pE.connect("button_press_event", self.on_social_clicked,
-    #            "https://www.patreon.com/eshanized")
-    yE.connect("button_press_event", self.on_social_clicked,
-               "https://youtube.com/c/eshanized")
-    dE.connect("button_press_event", self.on_social_clicked,
-               "#")
-    # tgE.connect("button_press_event", self.on_social_clicked,
-    #             "#")
-    # elE.connect("button_press_event", self.on_social_clicked,
-    #             "#")
+    # fbE.connect("button_press_event", self.on_social_clicked,
+    #             "https://www.facebook.com/eshanized")
+    # tE.connect("button_press_event", self.on_social_clicked,
+    #            "https://twitter.com/eshanized")
+    # # meE.connect("button_press_event", self.on_social_clicked,
+    # #             "#")
+    # inE.connect("button_press_event", self.on_social_clicked,
+    #             "https://www.instagram.com/eshanized/")
+    # liE.connect("button_press_event", self.on_social_clicked,
+    #             "https://www.linkedin.com/in/eshanized/")
+    # # pE.connect("button_press_event", self.on_social_clicked,
+    # #            "https://www.patreon.com/eshanized")
+    # yE.connect("button_press_event", self.on_social_clicked,
+    #            "https://youtube.com/c/eshanized")
+    # dE.connect("button_press_event", self.on_social_clicked,
+    #            "#")
+    # # tgE.connect("button_press_event", self.on_social_clicked,
+    # #             "#")
+    # # elE.connect("button_press_event", self.on_social_clicked,
+    # #             "#")
 
-    fbE.set_property("has-tooltip", True)
-    tE.set_property("has-tooltip", True)
-    meE.set_property("has-tooltip", True)
-    inE.set_property("has-tooltip", True)
-    liE.set_property("has-tooltip", True)
-    pE.set_property("has-tooltip", True)
-    yE.set_property("has-tooltip", True)
-    dE.set_property("has-tooltip", True)
-    tgE.set_property("has-tooltip", True)
-    elE.set_property("has-tooltip", True)
+    # fbE.set_property("has-tooltip", True)
+    # tE.set_property("has-tooltip", True)
+    # meE.set_property("has-tooltip", True)
+    # inE.set_property("has-tooltip", True)
+    # liE.set_property("has-tooltip", True)
+    # pE.set_property("has-tooltip", True)
+    # yE.set_property("has-tooltip", True)
+    # dE.set_property("has-tooltip", True)
+    # tgE.set_property("has-tooltip", True)
+    # elE.set_property("has-tooltip", True)
 
-    fbE.connect("query-tooltip", self.tooltip_callback, "Facebook")
-    tE.connect("query-tooltip", self.tooltip_callback, "Twitter")
-    meE.connect("query-tooltip", self.tooltip_callback, "Mewe")
-    inE.connect("query-tooltip", self.tooltip_callback, "Instagram")
-    liE.connect("query-tooltip", self.tooltip_callback, "LinkedIn")
-    pE.connect("query-tooltip", self.tooltip_callback, "Patreon")
-    yE.connect("query-tooltip", self.tooltip_callback, "Youtube")
-    dE.connect("query-tooltip", self.tooltip_callback, "Discord")
-    tgE.connect("query-tooltip", self.tooltip_callback, "Telegram")
-    elE.connect("query-tooltip", self.tooltip_callback, "Element-Matrix")
+    # fbE.connect("query-tooltip", self.tooltip_callback, "Facebook")
+    # tE.connect("query-tooltip", self.tooltip_callback, "Twitter")
+    # meE.connect("query-tooltip", self.tooltip_callback, "Mewe")
+    # inE.connect("query-tooltip", self.tooltip_callback, "Instagram")
+    # liE.connect("query-tooltip", self.tooltip_callback, "LinkedIn")
+    # pE.connect("query-tooltip", self.tooltip_callback, "Patreon")
+    # yE.connect("query-tooltip", self.tooltip_callback, "Youtube")
+    # dE.connect("query-tooltip", self.tooltip_callback, "Discord")
+    # tgE.connect("query-tooltip", self.tooltip_callback, "Telegram")
+    # elE.connect("query-tooltip", self.tooltip_callback, "Element-Matrix")
 
-    hbox3.pack_start(fbE, False, False, 0)
-    hbox3.pack_start(tE, False, False, 0)
-    hbox3.pack_start(meE, False, False, 0)
-    hbox3.pack_start(inE, False, False, 0)
-    hbox3.pack_start(liE, False, False, 0)
-    hbox3.pack_start(elE, False, False, 0)
+    # hbox3.pack_start(fbE, False, False, 0)
+    # hbox3.pack_start(tE, False, False, 0)
+    # hbox3.pack_start(meE, False, False, 0)
+    # hbox3.pack_start(inE, False, False, 0)
+    # hbox3.pack_start(liE, False, False, 0)
+    # hbox3.pack_start(elE, False, False, 0)
 
-    hbox6.pack_start(pE, False, False, 50)
-    hbox6.pack_start(yE, False, False, 0)
-    hbox6.pack_start(dE, False, False, 0)
-    hbox6.pack_start(tgE, False, False, 0)
-    if username == user:
-        hbox3.pack_start(hboxUser, True, False, 0)
-    hbox3.pack_start(hbox6, True, False, 0)
+    # hbox6.pack_start(pE, False, False, 50)
+    # hbox6.pack_start(yE, False, False, 0)
+    # hbox6.pack_start(dE, False, False, 0)
+    # hbox6.pack_start(tgE, False, False, 0)
+    # if username == user:
+    #     hbox3.pack_start(hboxUser, True, False, 0)
+    # hbox3.pack_start(hbox6, True, False, 0)
 
     # ======================================================================
     #                   Start Arcolinux Tweak Tool
