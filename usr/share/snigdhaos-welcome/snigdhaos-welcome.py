@@ -234,7 +234,7 @@ Do you want to install it?")
     def mirror_update(self):
         GLib.idle_add(self.cc.set_markup, "<span foreground='teal'><b>Updating Mirrorlist Using Reflector!</b> \nIt will take some time, Please Wait...</span>")  # noqa
         GLib.idle_add(self.button8.set_sensitive, False)
-        subprocess.run(["pkexec", "/usr/bin/reflector", "--age", "6", "--latest", "21", "--fastest", "21", "--threads", "21", "--sort", "rate", "--protocol", "https", "--save", "/etc/pacman.d/mirrorlist"], shell=False)
+        subprocess.run(["pkexec", "/usr/bin/rate-mirrors", "--concurrency", "40", "--disable-comments", "--allow-root", "--save", "/etc/pacman.d/mirrorlist", "arch"], shell=False)
         print("DONE!!!")
         GLib.idle_add(self.cc.set_markup, "<b>DONE</b>")
         GLib.idle_add(self.button8.set_sensitive, True)
