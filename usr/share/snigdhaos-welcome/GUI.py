@@ -16,7 +16,7 @@ username = getpass.getuser()
 if DEBUG:
     user = username
 else:
-    user = "snigdha"
+    user = "eshan"
 
 Settings = home + "/.config/snigdhaos-welcome/settings.conf"
 Skel_Settings = "/etc/skel/.config/snigdhaos-welcome/settings.conf"
@@ -60,6 +60,8 @@ def GUI(self, Gtk, GdkPixbuf):
     self.cc = Gtk.Label()
 
     label = Gtk.Label(xalign=0)
+    label.set_justify(Gtk.Justification.CENTER)
+    label.set_line_wrap(True)
     label.set_markup(
         "<big>Welcome to <b>SNIGDHA OS(HawkEye)</b></big>")
     label.set_line_wrap(True)
