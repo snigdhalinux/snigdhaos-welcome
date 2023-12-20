@@ -232,14 +232,14 @@ Do you want to install it?")
     #     md.destroy()
 
     def mirror_update(self):
-        GLib.idle_add(self.cc.set_markup, "<span foreground='teal'><b>Updating Mirrorlist Using Reflector!</b> \nIt will take some time, Please Wait...</span>")  # noqa
+        GLib.idle_add(self.cc.set_markup, "<span foreground='teal'><b>Updating Arch Mirrorlist Using Rate-Mirrors!</b> \nIt will take some time, Please Wait...</span>")  # noqa
         GLib.idle_add(self.button8.set_sensitive, False)
         subprocess.run(["pkexec", "/usr/bin/rate-mirrors", "--concurrency", "40", "--disable-comments", "--allow-root", "--save", "/etc/pacman.d/mirrorlist", "arch"], shell=False)
-        GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b><i>Updating BlackArch mirrorlist</i></b> \nThis may take some time, please wait..</span>")  # noqa
+        GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b>Updating BlackArch Mirrorlist Using Rate-Mirrors</b> \nThis may take some time, please wait..</span>")  # noqa
         subprocess.run(["pkexec", "/usr/bin/rate-mirrors", "--concurrency", "40", "--disable-comments", "--allow-root", "--save", "/etc/pacman.d/blackarch-mirrorlist", "blackarch"], shell=False)
-        GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b><i>Updating Chaotic AUR mirrorlist</i></b> \nThis may take some time, please wait...</span>")  # noqa
+        GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b>Updating Chaotic AUR Mirrorlist Using Rate-Mirrors</b> \nThis may take some time, please wait...</span>")  # noqa
         subprocess.run(["pkexec", "/usr/bin/rate-mirrors", "--concurrency", "40", "--disable-comments", "--allow-root", "--save", "/etc/pacman.d/chaotic-mirrorlist", "chaotic-aur"], shell=False)
-        GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b><i>Running pacman sync...</i></b></span>")  # noqa
+        GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b>Synchronizing...</b></span>")  # noqa
         subprocess.run(["pkexec", "/usr/bin/pacman", "-Syy"], shell=False)
         print("DONE!!!")
         GLib.idle_add(self.cc.set_markup, "<b>DONE</b>")
