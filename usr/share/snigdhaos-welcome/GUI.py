@@ -92,10 +92,10 @@ def GUI(self, Gtk, GdkPixbuf):
             "incase Online Installation fails!</b></span>\n")  # noqa
     else:
         label2.set_markup("The links below will get you started on Snigdha OS. We communicate with our community via Forum.\n"
-                          "Do join us to learn the latest news, ask questions or for casual talk.\n" +  # noqa
-                          "<b>Telegram</b> is for chitchat - <b>Discord</b> is for assistance.\n" +  # noqa
-                          "We have a <b>forum</b> for the longer and more technical questions.\n" +  # noqa
-                          "Learn, have fun and enjoy.")
+                        #   "Do join us to learn the latest news, ask questions or for casual talk.\n" +  # noqa
+                        #   "<b>Telegram</b> is for chitchat - <b>Discord</b> is for assistance.\n" +  # noqa
+                        #   "We have a <b>forum</b> for the longer and more technical questions.\n" +  # noqa
+                          "Enjoy Snigdha OS.")
 
     hbox4.set_center_widget(label2)
     hbox1.pack_start(label, False, False, 0)
@@ -120,12 +120,12 @@ def GUI(self, Gtk, GdkPixbuf):
     button2.connect("clicked", self.on_ai_clicked)
     button2.set_size_request(0, 80)
 
-    buttonca = Gtk.Button(label="")
-    buttonca_label = buttonca.get_child()
-    buttonca_label.set_markup("<span size='large'><b>Online Installation</b></span>")
+    # buttonca = Gtk.Button(label="")
+    # buttonca_label = buttonca.get_child()
+    # buttonca_label.set_markup("<span size='large'><b>Online Installation</b></span>")
 
-    buttonca.connect("clicked", self.on_aica_clicked)
-    buttonca.set_size_request(0, 80)
+    # buttonca.connect("clicked", self.on_aica_clicked)
+    # buttonca.set_size_request(0, 80)
 
 
     self.button8 = Gtk.Button(label="")
@@ -153,7 +153,7 @@ def GUI(self, Gtk, GdkPixbuf):
         #grid.attach(button13, 2, 0, 2, 2)
         grid.attach(button1, 2, 2, 2, 2)
         grid.attach(button2, 1, 4, 2, 2)
-        grid.attach(buttonca, 3, 4, 2, 2)
+        # grid.attach(buttonca, 3, 4, 2, 2)
         grid.set_column_homogeneous(True)
         grid.set_row_homogeneous(True)
     else:
