@@ -16,7 +16,7 @@ username = getpass.getuser()
 if DEBUG:
     user = username
 else:
-    user = "snigdha"
+    user = "eshan"
 
 Settings = home + "/.config/snigdhaos-welcome/settings.conf"
 Skel_Settings = "/etc/skel/.config/snigdhaos-welcome/settings.conf"
@@ -120,12 +120,12 @@ def GUI(self, Gtk, GdkPixbuf):
     button2.connect("clicked", self.on_ai_clicked)
     button2.set_size_request(0, 80)
 
-    # buttonca = Gtk.Button(label="")
-    # buttonca_label = buttonca.get_child()
-    # buttonca_label.set_markup("<span size='large'><b>Online Installation</b></span>")
+    buttonca = Gtk.Button(label="")
+    buttonca_label = buttonca.get_child()
+    buttonca_label.set_markup("<span size='large'><b>Online Installation</b></span>")
 
-    # buttonca.connect("clicked", self.on_aica_clicked)
-    # buttonca.set_size_request(0, 80)
+    buttonca.connect("clicked", self.on_aica_clicked)
+    buttonca.set_size_request(0, 80)
 
 
     self.button8 = Gtk.Button(label="")
@@ -153,7 +153,7 @@ def GUI(self, Gtk, GdkPixbuf):
         #grid.attach(button13, 2, 0, 2, 2)
         grid.attach(button1, 2, 2, 2, 2)
         grid.attach(button2, 1, 4, 2, 2)
-        # grid.attach(buttonca, 3, 4, 2, 2)
+        grid.attach(buttonca, 3, 4, 2, 2)
         grid.set_column_homogeneous(True)
         grid.set_row_homogeneous(True)
     else:
