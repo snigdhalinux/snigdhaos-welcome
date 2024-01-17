@@ -26,13 +26,13 @@ REMOTE_SERVER = "www.snigdhaos.org"
 class Main(Gtk.Window):
     def __init__(self):
         super(Main, self).__init__(title="Snigdha OS Arctic Welcome")
-        self.set_border_width(10)
+        self.set_border_width(0)
         self.set_default_size(860, 250)
         self.set_icon_from_file(os.path.join(GUI.base_dir, "images/snigdha-purple.png"))
         self.set_position(Gtk.WindowPosition.CENTER)
         self.results = ""
-        if not os.path.exists(GUI.home + "/.config/snigdha-welcome/"):
-            os.mkdir(GUI.home + "/.config/snigdha-welcome/")
+        if not os.path.exists(GUI.home + "/.config/snigdhaos-welcome/"):
+            os.mkdir(GUI.home + "/.config/snigdhaos-welcome/")
             with open(GUI.Settings, "w") as f:
                 f.write("autostart=True")
                 f.close()
@@ -219,7 +219,7 @@ class Main(Gtk.Window):
                 )
                 md.add_buttons("Yes", 1)
                 md.add_buttons("No", 0)
-                md.format_secondary_markup("Let Snigdha Welcome to install it ?")
+                md.format_secondary_markup("Let Snigdha OS to install it ?")
                 response = md.run()
                 md.destroy()
 
