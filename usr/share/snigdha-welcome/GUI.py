@@ -227,7 +227,7 @@ def GUI(self, Gtk, GdkPixbuf):
     lblusr.set_text("liveuser  |")
 
     lblpass = Gtk.Label(xalign=0)
-    lblpass.set_markup("<i>No Password</i>")
+    lblpass.set_markup("No Password")
 
     hboxUser = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
@@ -482,9 +482,9 @@ def GUI(self, Gtk, GdkPixbuf):
     # hbox6.pack_start(yE, False, False, 0)
     # hbox6.pack_start(dE, False, False, 0)
     # hbox6.pack_start(tgE, False, False, 0)
-    # if username == user:
-    #     hbox3.pack_start(hboxUser, True, False, 0)
-    # hbox3.pack_start(hbox6, True, False, 0)
+    if username == user:
+        hbox3.pack_start(hboxUser, True, False, 0)
+    hbox3.pack_start(hbox6, True, False, 0)
 
     # ======================================================================
     #                   Start Arcolinux Tweak Tool
