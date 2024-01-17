@@ -68,7 +68,7 @@ def GUI(self, Gtk, GdkPixbuf):
     self.cc = Gtk.Label()
 
     label = Gtk.Label(xalign=0)
-    label.set_markup("<big>Welcome to <b>Snigdha OS</b></big>")
+    label.set_markup("<big>Welcome to <b>Snigdha OS <i>Arctic</i></b></big>")
     label.set_line_wrap(True)
 
     # pixbuf = GdkPixbuf.Pixbuf().new_from_file_at_size(
@@ -93,8 +93,8 @@ def GUI(self, Gtk, GdkPixbuf):
             + "We have a <b>forum</b> for the longer and more technical questions.\n"  # noqa
         )
         label_warning.set_markup(
-            "\n<span size='x-large'><b>Use Basic Installation\n"
-            + "in case the Advanced Installation fails</b></span>\n"  # noqa
+            "\n<span size='x-large'><b>Use Offline Installation\n"
+            + "in case the Online Installation fails</b></span>\n"  # noqa
         )  # noqa
     else:
         label2.set_markup(
@@ -124,7 +124,7 @@ def GUI(self, Gtk, GdkPixbuf):
     buttongrub = Gtk.Button(label="")
     buttongrub_label = buttongrub.get_child()
     buttongrub_label.set_markup(
-        "<span size='large'><b>Grub installation (Default)</b></span>"
+        "<span size='large'><b>Grub installation (Recommended)</b></span>"
     )
     buttongrub.connect("clicked", self.on_grub_clicked)
     buttongrub.set_size_request(0, 60)
@@ -140,7 +140,7 @@ def GUI(self, Gtk, GdkPixbuf):
     button2 = Gtk.Button(label="")
     button2_label = button2.get_child()
     button2_label.set_markup(
-        "<span size='large'><b>Basic Installation (Offline)</b></span>"
+        "<span size='large'><b>Offline Installation</b></span>"
     )
     button2.connect("clicked", self.on_ai_clicked)
     button2.set_size_request(0, 60)
@@ -148,7 +148,7 @@ def GUI(self, Gtk, GdkPixbuf):
     buttonca = Gtk.Button(label="")
     buttonca_label = buttonca.get_child()
     buttonca_label.set_markup(
-        "<span size='large'><b>Advanced Installation (Online)</b></span>"
+        "<span size='large'><b>Online Installation (Recommended)</b></span>"
     )
     buttonca.connect("clicked", self.on_aica_clicked)
     buttonca.set_size_request(0, 60)
@@ -295,7 +295,7 @@ def GUI(self, Gtk, GdkPixbuf):
         "https://snigdhaos.org/",
     )
 
-    button10 = Gtk.Button(label="Snigdha Develop")
+    button10 = Gtk.Button(label="Develop Snigdha OS")
     button10.connect(
         "clicked",
         self.on_link_clicked,
