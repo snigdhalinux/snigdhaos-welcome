@@ -18,10 +18,10 @@ if DEBUG:
 else:
     user = "eshan"
 
-Settings = home + "/.config/snigdha-welcome/settings.conf"
-Skel_Settings = "/etc/skel/.config/snigdha-welcome/settings.conf"
-dot_desktop = "/usr/share/applications/snigdha-welcome.desktop"
-autostart = home + "/.config/autostart/snigdha-welcome.desktop"
+Settings = home + "/.config/snigdhaos-welcome/settings.conf"
+Skel_Settings = "/etc/skel/.config/snigdhaos-welcome/settings.conf"
+dot_desktop = "/usr/share/applications/snigdhaos-welcome.desktop"
+autostart = home + "/.config/autostart/snigdhaos-welcome.desktop"
 
 
 # check if path exists
