@@ -25,7 +25,7 @@ REMOTE_SERVER = "www.snigdhaos.org"
 
 class Main(Gtk.Window):
     def __init__(self):
-        super(Main, self).__init__(title="Snigdha Welcome")
+        super(Main, self).__init__(title="Snigdha OS Arctic Welcome")
         self.set_border_width(10)
         self.set_default_size(860, 250)
         self.set_icon_from_file(os.path.join(GUI.base_dir, "images/snigdha-purple.png"))
