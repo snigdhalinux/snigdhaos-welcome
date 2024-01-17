@@ -20,7 +20,7 @@ gi.require_version("Gtk", "3.0")
 gi.require_version("Wnck", "3.0")
 from gi.repository import Gtk, GdkPixbuf, GLib, Wnck  # noqa
 
-REMOTE_SERVER = "www.google.com"
+REMOTE_SERVER = "www.snigdhaos.org"
 
 
 class Main(Gtk.Window):
