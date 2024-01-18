@@ -489,21 +489,21 @@ def GUI(self, Gtk, GdkPixbuf):
     # ======================================================================
     #                   Start Arcolinux Tweak Tool
     # ======================================================================
-    launchBox = Gtk.EventBox()
-    pblaunch = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/archlinux-tweak-tool.svg"), 40, 40
-    )
-    launchimage = Gtk.Image().new_from_pixbuf(pblaunch)
+    # launchBox = Gtk.EventBox()
+    # pblaunch = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/archlinux-tweak-tool.svg"), 40, 40
+    # )
+    # launchimage = Gtk.Image().new_from_pixbuf(pblaunch)
 
-    launchBox.add(launchimage)
-    launchBox.connect("button_press_event", self.on_launch_clicked, "")
+    # launchBox.add(launchimage)
+    # launchBox.connect("button_press_event", self.on_launch_clicked, "")
 
-    launchBox.set_property("has-tooltip", True)
-    launchBox.connect(
-        "query-tooltip", self.tooltip_callback, "Launch Arcolinux Tweak Tool"
-    )
+    # launchBox.set_property("has-tooltip", True)
+    # launchBox.connect(
+    #     "query-tooltip", self.tooltip_callback, "Launch Arcolinux Tweak Tool"
+    # )
 
-    hbox6.pack_start(launchBox, False, False, 0)
+    # hbox6.pack_start(launchBox, False, False, 0)
     # hbox6.pack_start(infoE, False, False, 0)
     # ======================================================================
     #                   PACK TO WINDOW
