@@ -53,10 +53,22 @@ label#label_style {
     border-left: 1px solid @borders;
     border-right: 1px solid @borders;
     padding: 10px 10px 10px 10px;
-    border-radius: 100px;
+    border-radius: 0px;
+    font-size: 16px;
     font-weight: bold;
-    color: #fcfcfc;
-    font-family: 'Fira Code', sans-serif;
+    color: cyan;
+}
+label#label_style_eshan {
+    background-color: @theme_base_color;
+    border-top: 1px solid @borders;
+    border-bottom: 1px solid @borders;
+    border-left: 1px solid @borders;
+    border-right: 1px solid @borders;
+    padding: 10px 10px 10px 10px;
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
 }
 """
 

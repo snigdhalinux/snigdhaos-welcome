@@ -308,18 +308,18 @@ def GUI(self, Gtk, GdkPixbuf):
     tg_event.connect("query-tooltip", self.tooltip_callback, "Telegram")
     att_event.connect("query-tooltip", self.tooltip_callback, "Arch Linux Tweak Tool")
 
-    hbox_social_img.add(fb_event)
-    hbox_social_img.add(tw_event)
-    hbox_social_img.add(mew_event)
-    hbox_social_img.add(insta_event)
-    hbox_social_img.add(lin_event)
-    hbox_social_img.add(el_event)
-    hbox_social_img.add(pat_event)
-    hbox_social_img.add(label_social_padding)
-    hbox_social_img.add(yt_event)
-    hbox_social_img.add(ds_event)
-    hbox_social_img.add(tg_event)
-    hbox_social_img.add(att_event)
+    # hbox_social_img.add(fb_event)
+    # hbox_social_img.add(tw_event)
+    # hbox_social_img.add(mew_event)
+    # hbox_social_img.add(insta_event)
+    # hbox_social_img.add(lin_event)
+    # hbox_social_img.add(el_event)
+    # hbox_social_img.add(pat_event)
+    # hbox_social_img.add(label_social_padding)
+    # hbox_social_img.add(yt_event)
+    # hbox_social_img.add(ds_event)
+    # hbox_social_img.add(tg_event)
+    # hbox_social_img.add(att_event)
 
     label_info_header1 = Gtk.Label(xalign=0, yalign=0)
     label_info_header1.set_name("label_style")
@@ -430,7 +430,7 @@ def GUI(self, Gtk, GdkPixbuf):
     # ======================================================================
 
     label_welcome_message = Gtk.Label(xalign=0, yalign=0)
-    label_welcome_message.set_name("label_style")
+    label_welcome_message.set_name("label_style_eshan")
 
     if username == user:
         label_welcome_message.set_text(
@@ -619,8 +619,12 @@ def GUI(self, Gtk, GdkPixbuf):
         f"Brad Heffernan\n"
         f"Erik Dubois\n"
         f"Fennec\n"
+        f"Eshanized\n"
         # f"For support, or to report any issues use <b><a href='{app_discord}' title='{app_discord}'>Discord</a></b>"
     )
+    # label_credits.set_markup(
+    #     f"Eshanized\n"
+    # )
     label_credits.set_justify(Gtk.Justification.CENTER)
     label_credits.set_line_wrap(True)
     label_credits.set_halign(Gtk.Align.CENTER)
@@ -634,7 +638,7 @@ def GUI(self, Gtk, GdkPixbuf):
     # ======================================================================
 
     button_quit = Gtk.Button(label="")
-    button_quit.get_child().set_markup("<b>Quit</b>")
+    button_quit.get_child().set_markup("<b>Exit</b>")
     button_quit.set_size_request(100, 30)
     button_quit.connect("clicked", Gtk.main_quit)
 
@@ -649,7 +653,7 @@ def GUI(self, Gtk, GdkPixbuf):
     check.connect(
         "query-tooltip",
         self.tooltip_callback,
-        "Autostart ArcoLinux Welcome App at login",
+        "Untick if you do not want Snigdha OS Welcome to run @startup!",
     )
     check.connect("toggled", self.startup_toggle)
     check.set_active(autostart)
