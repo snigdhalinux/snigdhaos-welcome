@@ -16,7 +16,7 @@ username = getpass.getuser()
 if DEBUG:
     user = username
 else:
-    user = "liveuser"
+    user = "eshan"
 
 Settings = home + "/.config/snigdhaos-welcome/settings.conf"
 Skel_Settings = "/etc/skel/.config/snigdhaos-welcome/settings.conf"
@@ -85,12 +85,12 @@ def GUI(self, Gtk, GdkPixbuf):
 
     if username == user:
         label2.set_markup(
-            "We advise to clean the computer with <b>Gparted</b> before installing.\n"
-            + "During the Calamares installation many options will be open to you. You have the freedom of choice.\n"
-            + "We communicate with our community via a diversity of social media."  # noqa
-            + "Do join us to learn the latest news, ask questions or for casual talk.\n"  # noqa
+            "Please clean the computer with <b>Gparted</b> before installing.\n"
+            + "During the Snigdha OS installation many options will be open. You have the freedom of choice.\n"
+            + "We communicate with our community via a Snigdha OS Forum."  # noqa
+            + "Do join to learn the latest news, ask questions or for casual talk.\n"  # noqa
             # + "<b>Forum</b> is for support\n"  # noqa
-            + "We have a <b>forum</b> for the longer and more technical questions.\n"  # noqa
+            + "<b>Forum</b>is for the longer and more technical questions.\n"  # noqa
         )
         label_warning.set_markup(
             "\n<span size='x-large'><b>Use Offline Installation\n"
@@ -171,7 +171,7 @@ def GUI(self, Gtk, GdkPixbuf):
 
     self.button_sofi = Gtk.Button(label="")
     button_sofi_label = self.button_sofi.get_child()
-    button_sofi_label.set_markup("<span size='large'><b>Snigdha App Installer</b></span>")
+    button_sofi_label.set_markup("<span size='large'><b>Snigdha OS App Installer</b></span>")
     self.button_sofi.connect("clicked", self.on_button_sofi_clicked)
     self.button_sofi.set_size_request(420, 70)
 

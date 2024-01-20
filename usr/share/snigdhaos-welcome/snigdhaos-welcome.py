@@ -126,7 +126,9 @@ class Main(Gtk.Window):
             app_cmd = [
                 "sudo",
                 "cp",
-                settings_beginner_file,
+                "-r",
+                "--verbose",
+                "/etc/calamares/settings-beginner.conf"
                 "/etc/calamares/settings.conf",
             ]
             threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
@@ -134,6 +136,8 @@ class Main(Gtk.Window):
             app_cmd = [
                 "sudo",
                 "cp",
+                "-r",
+                "--verbose",
                 packages_no_sys_update_file,
                 "/etc/calamares/modules/packages.conf",
             ]
