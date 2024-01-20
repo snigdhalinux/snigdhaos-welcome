@@ -356,7 +356,7 @@ def GUI(self, Gtk, GdkPixbuf):
         label_info2.set_markup(desc2)
 
     else:
-        label_info_header1.set_markup("<b>Welcome to ArcoLinux</b>")
+        label_info_header1.set_markup("<b>Welcome to Snigdha OS - Arctic</b>")
         desc = (
             f"We communicate with our community via a diversity of social media.\n"
             f"Do join us to learn the latest news, ask questions or for casual talk.\n"
