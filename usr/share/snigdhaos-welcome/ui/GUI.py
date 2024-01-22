@@ -23,7 +23,7 @@ app_youtube = "https://www.youtube.com/erikdubois"
 if debug:
     user = username
 else:
-    user = "eshan"
+    user = "liveuser"
 
 Settings = home + "/.config/snigdhaos-welcome/settings.conf"
 Skel_Settings = "/etc/skel/.config/snigdhaos-welcome/settings.conf"
