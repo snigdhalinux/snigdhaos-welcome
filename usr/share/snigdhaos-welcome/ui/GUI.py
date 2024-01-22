@@ -61,7 +61,7 @@ def GUI(self, Gtk, GdkPixbuf):
     # initialize the stack-switcher
     stack_switcher = StackSwitcher(stack)
 
-    vbox_stack_sidebar = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+    vbox_stack_sidebar = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=25)
     vbox_stack_sidebar.set_name("stack_box")
 
     vbox_stack_sidebar.add(stack_switcher)
@@ -70,19 +70,19 @@ def GUI(self, Gtk, GdkPixbuf):
     self.vbox.add(vbox_stack_sidebar)
 
     # vbox to contain all the installation controls
-    vbox_install_stack = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+    vbox_install_stack = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
     vbox_install_stack.set_halign(Gtk.Align.CENTER)
 
-    hbox_install_buttons = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+    hbox_install_buttons = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     hbox_install_buttons.set_halign(Gtk.Align.CENTER)
 
-    vbox_quit = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+    vbox_quit = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
     vbox_quit.set_halign(Gtk.Align.CENTER)
 
-    hbox_util_buttons = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+    hbox_util_buttons = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     hbox_util_buttons.set_halign(Gtk.Align.CENTER)
 
-    vbox_welcome_title = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+    vbox_welcome_title = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=20)
     vbox_welcome_title.set_halign(Gtk.Align.CENTER)
 
     vbox_welcome_message = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
@@ -96,20 +96,20 @@ def GUI(self, Gtk, GdkPixbuf):
     vbox_install_stack.pack_start(vbox_quit, False, False, 0)
 
     # vbox to contain all the information text
-    vbox_info_stack = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+    vbox_info_stack = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=15)
     vbox_info_stack.set_halign(Gtk.Align.CENTER)
 
-    vbox_info = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+    vbox_info = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=15)
     vbox_info_stack.pack_start(vbox_info, False, False, 0)
 
     # vbox to contain credits text
-    vbox_credits_stack = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+    vbox_credits_stack = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=15)
     vbox_credits_stack.set_halign(Gtk.Align.CENTER)
 
-    vbox_credits = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+    vbox_credits = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=15)
     vbox_credits_stack.pack_start(vbox_credits, False, False, 0)
 
-    hbox_social_links = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+    hbox_social_links = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=15)
     hbox_social_links.set_halign(Gtk.Align.CENTER)
 
     # social links with images
@@ -272,13 +272,13 @@ def GUI(self, Gtk, GdkPixbuf):
     )
 
     # att
-    att_event = Gtk.EventBox()
-    pbatt = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/archlinux-tweak-tool.svg"), 28, 28
-    )
-    attimage = Gtk.Image().new_from_pixbuf(pbatt)
-    att_event.add(attimage)
-    att_event.connect("button_press_event", self.on_launch_clicked, "")
+    # att_event = Gtk.EventBox()
+    # pbatt = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/archlinux-tweak-tool.svg"), 28, 28
+    # )
+    # attimage = Gtk.Image().new_from_pixbuf(pbatt)
+    # att_event.add(attimage)
+    # att_event.connect("button_press_event", self.on_launch_clicked, "")
 
     label_social_padding = Gtk.Label(xalign=0, yalign=0)
     label_social_padding.set_text("     ")
@@ -294,7 +294,7 @@ def GUI(self, Gtk, GdkPixbuf):
     yt_event.set_property("has-tooltip", True)
     ds_event.set_property("has-tooltip", True)
     tg_event.set_property("has-tooltip", True)
-    att_event.set_property("has-tooltip", True)
+    # att_event.set_property("has-tooltip", True)
 
     fb_event.connect("query-tooltip", self.tooltip_callback, "Facebook")
     tw_event.connect("query-tooltip", self.tooltip_callback, "Twitter")
@@ -307,7 +307,7 @@ def GUI(self, Gtk, GdkPixbuf):
     yt_event.connect("query-tooltip", self.tooltip_callback, "YouTube")
     ds_event.connect("query-tooltip", self.tooltip_callback, "Discord")
     tg_event.connect("query-tooltip", self.tooltip_callback, "Telegram")
-    att_event.connect("query-tooltip", self.tooltip_callback, "Arch Linux Tweak Tool")
+    # att_event.connect("query-tooltip", self.tooltip_callback, "Arch Linux Tweak Tool")
 
     hbox_social_img.add(fb_event)
     hbox_social_img.add(tw_event)
@@ -397,7 +397,7 @@ def GUI(self, Gtk, GdkPixbuf):
 
     autostart = eval(self.load_settings())
 
-    hbox_notify = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=0)
+    hbox_notify = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     hbox_notify.set_halign(Gtk.Align.CENTER)
 
     hbox_footer_buttons = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
@@ -457,7 +457,7 @@ def GUI(self, Gtk, GdkPixbuf):
     button_gparted_label = button_gparted.get_child()
     button_gparted_label.set_markup("Run GParted")
     button_gparted.connect("clicked", self.on_gp_clicked)
-    button_gparted.set_size_request(100, 30)
+    button_gparted.set_size_request(100, 50)
     button_gparted.set_property("has-tooltip", True)
     button_gparted.connect("query-tooltip", self.tooltip_callback, "Launch GParted")
 
@@ -468,7 +468,7 @@ def GUI(self, Gtk, GdkPixbuf):
     self.button_easy_install = Gtk.Button(label="")
     button_easy_install_label = self.button_easy_install.get_child()
     button_easy_install_label.set_markup(
-        "<span size='large'><b>Offline Installation</b></span>"
+        "<span size='large'>Offline Installation</span>"
     )
     self.button_easy_install.connect("clicked", self.on_easy_install_clicked)
     self.button_easy_install.set_size_request(300, 60)
@@ -484,7 +484,7 @@ def GUI(self, Gtk, GdkPixbuf):
     button_adv_label = self.button_adv_install.get_child()
 
     button_adv_label.set_markup(
-        "<span size='large'><b>Online Installation</b></span>"
+        "<span size='large'>Online Installation</span>"
     )
     self.button_adv_install.connect("clicked", self.on_adv_install_clicked)
     self.button_adv_install.set_size_request(300, 60)
@@ -639,7 +639,7 @@ def GUI(self, Gtk, GdkPixbuf):
     # ======================================================================
 
     button_quit = Gtk.Button(label="")
-    button_quit.get_child().set_markup("<b>EXIT</b>")
+    button_quit.get_child().set_markup("EXIT")
     button_quit.set_size_request(100, 40)
     button_quit.connect("clicked", Gtk.main_quit)
 

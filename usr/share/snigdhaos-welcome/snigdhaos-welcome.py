@@ -360,89 +360,89 @@ class Main(Gtk.Window):
         else:
             threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
 
-    def on_buttonatt_clicked(self, widget):
-        app_cmd = [
-            "/usr/bin/archlinux-tweak-tool",
-        ]
-        pacman_cmd = [
-            "pkexec",
-            "pacman",
-            "-Sy",
-            "archlinux-tweak-tool-git",
-            "--noconfirm",
-            "--needed",
-        ]
+    # def on_buttonatt_clicked(self, widget):
+    #     app_cmd = [
+    #         "/usr/bin/archlinux-tweak-tool",
+    #     ]
+    #     pacman_cmd = [
+    #         "pkexec",
+    #         "pacman",
+    #         "-Sy",
+    #         "archlinux-tweak-tool-git",
+    #         "--noconfirm",
+    #         "--needed",
+    #     ]
 
-        dev_package = "archlinux-tweak-tool-dev-git"
+    #     dev_package = "archlinux-tweak-tool-dev-git"
 
-        if self.check_package_installed(dev_package):
-            print("[WARN]: %s package found ..removing it" % dev_package)
-            self.remove_dev_package(
-                ["pkexec", "pacman", "-Rs", dev_package, "--noconfirm"], dev_package
-            )
+    #     if self.check_package_installed(dev_package):
+    #         print("[WARN]: %s package found ..removing it" % dev_package)
+    #         self.remove_dev_package(
+    #             ["pkexec", "pacman", "-Rs", dev_package, "--noconfirm"], dev_package
+    #         )
 
-        if not self.check_package_installed("archlinux-tweak-tool-git"):
-            if not os.path.exists(self.pacman_lockfile):
-                md = MessageDialog(
-                    title="Install Package",
-                    message="<b>Arch Linux Tweak Tool</b> is missing, Let Snigdha OS - Welcome install it ?",
-                )
+    #     if not self.check_package_installed("archlinux-tweak-tool-git"):
+    #         if not os.path.exists(self.pacman_lockfile):
+    #             md = MessageDialog(
+    #                 title="Install Package",
+    #                 message="<b>Arch Linux Tweak Tool</b> is missing, Let Snigdha OS - Welcome install it ?",
+    #             )
 
-                md.show_all()
-                md.run()
-                md.destroy()
+    #             md.show_all()
+    #             md.run()
+    #             md.destroy()
 
-                if md.response is True:
-                    threading.Thread(
-                        target=self.check_package_queue, daemon=True
-                    ).start()
-                    threading.Thread(
-                        target=self.install_package,
-                        args=(
-                            app_cmd,
-                            pacman_cmd,
-                            "archlinux-tweak-tool-git",
-                        ),
-                        daemon=True,
-                    ).start()
-            else:
-                print(
-                    "[ERROR]: Pacman lockfile found %s, is another pacman process running ?"
-                    % self.pacman_lockfile
-                )
-                md = Gtk.MessageDialog(
-                    parent=self,
-                    flags=0,
-                    message_type=Gtk.MessageType.WARNING,
-                    buttons=Gtk.ButtonsType.OK,
-                    text="Pacman lockfile found %s, is another pacman process running ?"
-                    % self.pacman_lockfile,
-                    title="Warning",
-                )
-                md.run()
-                md.destroy()
-        else:
-            threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
+    #             if md.response is True:
+    #                 threading.Thread(
+    #                     target=self.check_package_queue, daemon=True
+    #                 ).start()
+    #                 threading.Thread(
+    #                     target=self.install_package,
+    #                     args=(
+    #                         app_cmd,
+    #                         pacman_cmd,
+    #                         "archlinux-tweak-tool-git",
+    #                     ),
+    #                     daemon=True,
+    #                 ).start()
+    #         else:
+    #             print(
+    #                 "[ERROR]: Pacman lockfile found %s, is another pacman process running ?"
+    #                 % self.pacman_lockfile
+    #             )
+    #             md = Gtk.MessageDialog(
+    #                 parent=self,
+    #                 flags=0,
+    #                 message_type=Gtk.MessageType.WARNING,
+    #                 buttons=Gtk.ButtonsType.OK,
+    #                 text="Pacman lockfile found %s, is another pacman process running ?"
+    #                 % self.pacman_lockfile,
+    #                 title="Warning",
+    #             )
+    #             md.run()
+    #             md.destroy()
+    #     else:
+    #         threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
 
-    def check_package_installed(self, package):
-        pacman_cmd = ["pacman", "-Qi", package]
-        try:
-            process = subprocess.run(
-                pacman_cmd,
-                shell=False,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                universal_newlines=True,
-            )
+    # def check_package_installed(self, package):
+    #     pacman_cmd = ["pacman", "-Qi", package]
+    #     try:
+    #         process = subprocess.run(
+    #             pacman_cmd,
+    #             shell=False,
+    #             stdout=subprocess.PIPE,
+    #             stderr=subprocess.STDOUT,
+    #             universal_newlines=True,
+    #         )
 
-            if process.returncode == 0:
-                # package is installed
-                return True
-            else:
-                return False
-        except subprocess.CalledProcessError as e:
-            # package is not installed
-            return False
+    #         if process.returncode == 0:
+    #             # package is installed
+    #             return True
+    #         else:
+    #             return False
+    #     except subprocess.CalledProcessError as e:
+    #         # package is not installed
+    #         return False
 
     def on_buttonarandr_clicked(self, widget):
         app_cmd = ["/usr/bin/arandr"]
@@ -504,88 +504,88 @@ class Main(Gtk.Window):
         else:
             threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
 
-    def on_button_sofi_clicked(self, widget):
-        app_cmd = ["/usr/bin/sofirem"]
-        pacman_cmd = [
-            "pkexec",
-            "pacman",
-            "-Sy",
-            "sofirem-git",
-            "--noconfirm",
-            "--needed",
-        ]
+    # def on_button_sofi_clicked(self, widget):
+    #     app_cmd = ["/usr/bin/sofirem"]
+    #     pacman_cmd = [
+    #         "pkexec",
+    #         "pacman",
+    #         "-Sy",
+    #         "sofirem-git",
+    #         "--noconfirm",
+    #         "--needed",
+    #     ]
 
-        dev_package = "sofirem-dev-git"
+    #     dev_package = "sofirem-dev-git"
 
-        if self.check_package_installed(dev_package):
-            print("[WARN]: %s package found ..removing it" % dev_package)
-            self.remove_dev_package(
-                ["pkexec", "pacman", "-Rs", dev_package, "--noconfirm"], dev_package
-            )
+    #     if self.check_package_installed(dev_package):
+    #         print("[WARN]: %s package found ..removing it" % dev_package)
+    #         self.remove_dev_package(
+    #             ["pkexec", "pacman", "-Rs", dev_package, "--noconfirm"], dev_package
+    #         )
 
-        if not self.check_package_installed("sofirem-git"):
-            if not os.path.exists(self.pacman_lockfile):
-                md = MessageDialog(
-                    title="Install Package",
-                    message="<b>Sofirem</b> is missing, Let Snigdha OS - Welcome install it ?",
-                )
+    #     if not self.check_package_installed("sofirem-git"):
+    #         if not os.path.exists(self.pacman_lockfile):
+    #             md = MessageDialog(
+    #                 title="Install Package",
+    #                 message="<b>Sofirem</b> is missing, Let Snigdha OS - Welcome install it ?",
+    #             )
 
-                md.show_all()
-                md.run()
-                md.destroy()
+    #             md.show_all()
+    #             md.run()
+    #             md.destroy()
 
-                if md.response is True:
-                    threading.Thread(
-                        target=self.check_package_queue, daemon=True
-                    ).start()
-                    threading.Thread(
-                        target=self.install_package,
-                        args=(
-                            app_cmd,
-                            pacman_cmd,
-                            "sofirem-git",
-                        ),
-                        daemon=True,
-                    ).start()
-            else:
-                print(
-                    "[ERROR]: Pacman lockfile found %s, is another pacman process running ?"
-                    % self.pacman_lockfile
-                )
-                md = Gtk.MessageDialog(
-                    parent=self,
-                    flags=0,
-                    message_type=Gtk.MessageType.WARNING,
-                    buttons=Gtk.ButtonsType.OK,
-                    text="Pacman lockfile found %s, is another pacman process running ?"
-                    % self.pacman_lockfile,
-                    title="Warning",
-                )
-                md.run()
-                md.destroy()
-        else:
-            threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
+    #             if md.response is True:
+    #                 threading.Thread(
+    #                     target=self.check_package_queue, daemon=True
+    #                 ).start()
+    #                 threading.Thread(
+    #                     target=self.install_package,
+    #                     args=(
+    #                         app_cmd,
+    #                         pacman_cmd,
+    #                         "sofirem-git",
+    #                     ),
+    #                     daemon=True,
+    #                 ).start()
+    #         else:
+    #             print(
+    #                 "[ERROR]: Pacman lockfile found %s, is another pacman process running ?"
+    #                 % self.pacman_lockfile
+    #             )
+    #             md = Gtk.MessageDialog(
+    #                 parent=self,
+    #                 flags=0,
+    #                 message_type=Gtk.MessageType.WARNING,
+    #                 buttons=Gtk.ButtonsType.OK,
+    #                 text="Pacman lockfile found %s, is another pacman process running ?"
+    #                 % self.pacman_lockfile,
+    #                 title="Warning",
+    #             )
+    #             md.run()
+    #             md.destroy()
+    #     else:
+    #         threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
 
-    def check_package_queue(self):
-        while True:
-            items = self.pkg_queue.get()
+    # def check_package_queue(self):
+    #     while True:
+    #         items = self.pkg_queue.get()
 
-            if items is not None:
-                status, app_cmd, package = items
-                try:
-                    if status == 0:
-                        print("[INFO]: Launching application")
-                        self.run_app(app_cmd)
+    #         if items is not None:
+    #             status, app_cmd, package = items
+    #             try:
+    #                 if status == 0:
+    #                     print("[INFO]: Launching application")
+    #                     self.run_app(app_cmd)
 
-                    if status == 1:
-                        print("[ERROR]: Package %s install failed" % package)
-                        break
+    #                 if status == 1:
+    #                     print("[ERROR]: Package %s install failed" % package)
+    #                     break
 
-                    sleep(0.2)
-                except Exception as e:
-                    print("[ERROR]: Exception in check_package_queue(): %s" % e)
-                finally:
-                    self.pkg_queue.task_done()
+    #                 sleep(0.2)
+    #             except Exception as e:
+    #                 print("[ERROR]: Exception in check_package_queue(): %s" % e)
+    #             finally:
+    #                 self.pkg_queue.task_done()
 
     def remove_dev_package(self, pacman_cmd, package):
         try:
@@ -638,7 +638,7 @@ class Main(Gtk.Window):
                     )
                     GLib.idle_add(
                         self.label_notify.set_markup,
-                        "<span foreground='orange'><b>Failed to remove dev package %s</b></span>"
+                        "<span foreground='red'><b>Failed to remove dev package %s</b></span>"
                         % package,
                     )
 
@@ -650,7 +650,7 @@ class Main(Gtk.Window):
             )
             GLib.idle_add(
                 self.label_notify.set_markup,
-                "<span foreground='orange'><b>Failed to remove dev package %s</b></span>"
+                "<span foreground='red'><b>Failed to remove dev package %s</b></span>"
                 % package,
             )
 
@@ -660,7 +660,7 @@ class Main(Gtk.Window):
 
             GLib.idle_add(
                 self.label_notify.set_markup,
-                "<span foreground='orange'><b>Installing %s</b></span>" % package,
+                "<span foreground='cyan'><b>Installing %s</b></span>" % package,
             )
 
             with subprocess.Popen(
@@ -713,7 +713,7 @@ class Main(Gtk.Window):
             )
             GLib.idle_add(
                 self.label_notify.set_markup,
-                "<span foreground='orange'><b>Package install failed</b></span>",
+                "<span foreground='red'><b>Package install failed</b></span>",
             )
         finally:
             self.pkg_queue.put(None)
@@ -804,43 +804,43 @@ class Main(Gtk.Window):
         tooltip.set_text(text)
         return True
 
-    def on_launch_clicked(self, widget, event, link):
-        app_cmd = [
-            "/usr/bin/archlinux-tweak-tool",
-        ]
-        pacman_cmd = [
-            "pkexec",
-            "pacman",
-            "-Sy",
-            "archlinux-tweak-tool-git",
-            "--noconfirm",
-            "--needed",
-        ]
+    # def on_launch_clicked(self, widget, event, link):
+    #     app_cmd = [
+    #         "/usr/bin/archlinux-tweak-tool",
+    #     ]
+    #     pacman_cmd = [
+    #         "pkexec",
+    #         "pacman",
+    #         "-Sy",
+    #         "archlinux-tweak-tool-git",
+    #         "--noconfirm",
+    #         "--needed",
+    #     ]
 
-        if os.path.isfile("/usr/bin/archlinux-tweak-tool"):
-            threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
+    #     if os.path.isfile("/usr/bin/archlinux-tweak-tool"):
+    #         threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
 
-        else:
-            md = MessageDialog(
-                title="Install Package",
-                message="<b>Arch Linux Tweak Tool</b> is missing, Let Snigdha OS - Welcome install it ?",
-            )
+    #     else:
+    #         md = MessageDialog(
+    #             title="Install Package",
+    #             message="<b>Arch Linux Tweak Tool</b> is missing, Let Snigdha OS - Welcome install it ?",
+    #         )
 
-            md.show_all()
-            md.run()
-            md.destroy()
+    #         md.show_all()
+    #         md.run()
+    #         md.destroy()
 
-            if md.response is True:
-                threading.Thread(target=self.check_package_queue, daemon=True).start()
-                threading.Thread(
-                    target=self.install_package,
-                    args=(
-                        app_cmd,
-                        pacman_cmd,
-                        "archlinux-tweak-tool-git",
-                    ),
-                    daemon=True,
-                ).start()
+    #         if md.response is True:
+    #             threading.Thread(target=self.check_package_queue, daemon=True).start()
+    #             threading.Thread(
+    #                 target=self.install_package,
+    #                 args=(
+    #                     app_cmd,
+    #                     pacman_cmd,
+    #                     "archlinux-tweak-tool-git",
+    #                 ),
+    #                 daemon=True,
+    #             ).start()
 
     def internet_notifier(self):
         bb = 0
@@ -852,7 +852,7 @@ class Main(Gtk.Window):
                 self.label_notify.set_name("label_style")
                 GLib.idle_add(
                     self.label_notify.set_markup,
-                    f"<span foreground='red'><b>No internet!</b>\n"
+                    f"<span foreground='yellow'><b>No internet!</b>\n"
                     f"Snigdha OS will <b>not</b> install any additional packages!</span>",
                 )  # noqa
             else:
@@ -863,21 +863,6 @@ class Main(Gtk.Window):
                     bb = 1
             sleep(3)
 
-    # def mirror_reload(self):
-    #     md = Gtk.MessageDialog(parent=self,
-    #                            flags=0,
-    #                            message_type=Gtk.MessageType.INFO,
-    #                            buttons=Gtk.ButtonsType.YES_NO,
-    #                            text="You are now connected")
-    #     md.format_secondary_markup("Would you like to update the <b>Arch Linux</b> mirrorlist?")
-    #     response = md.run()
-
-    #     if response == Gtk.ResponseType.YES:
-    #         GLib.idle_add(self.cc.set_markup, "<span foreground='orange'><b><i>Updating your mirrorlist</i></b> \nThis may take some time, please wait...</span>")  # noqa
-    #         t = threading.Thread(target=self.mirror_update)
-    #         t.daemon = True
-    #         t.start()
-    #     md.destroy()
 
     def mirror_update(self):
         GLib.idle_add(
@@ -925,37 +910,6 @@ class Main(Gtk.Window):
         GLib.idle_add(self.label_notify.set_markup, "<b>Mirrorlist updated</b>")
         GLib.idle_add(self.button_mirrors.set_sensitive, True)
 
-    # def btrfs_update(self):
-    #    if GUI.DEBUG:
-    #        path = "/home/bheffernan/Repos/GITS/XFCE/hefftor-calamares-oem-config/calamares/modules/partition.conf"
-    #    else:
-    #        path = "/etc/calamares/modules/partition.conf"
-
-    #    with open(path, "r") as f:
-    #        lines = f.readlines()
-    #        f.close()
-    #    data = [x for x in lines if "defaultFileSystemType" in x]
-    #    pos = lines.index(data[0])
-
-    #    lines[pos] = "defaultFileSystemType:  \"ext4\"\n"
-
-    #    with open(path, "w") as f:
-    #        f.writelines(lines)
-    #        f.close()
-
-    #    GLib.idle_add(self.MessageBox,"Success", "Your filesystem has been changed.")
-
-    # def finished_mirrors(self):
-    #     md = Gtk.MessageDialog(parent=self,
-    #                            flags=0,
-    #                            message_type=Gtk.MessageType.INFO,
-    #                            buttons=Gtk.ButtonsType.OK,
-    #                            text="Finished")
-    #     md.format_secondary_markup("Mirrorlist has been updated!")
-    #     md.run()
-    #     md.destroy()
-    #     GLib.idle_add(self.cc.set_markup, "")
-    #     GLib.idle_add(self.button8.set_sensitive, True)
 
     def MessageBox(self, title, message):
         md = Gtk.MessageDialog(
@@ -969,50 +923,22 @@ class Main(Gtk.Window):
         md.run()
         md.destroy()
 
-    def installATT(self):
-        subprocess.call(
-            [
-                "pkexec",
-                "/usr/bin/pacman",
-                "-S",
-                "archlinux-tweak-tool-git",
-                "--noconfirm",
-            ],
-            shell=False,
-        )
-        GLib.idle_add(
-            self.MessageBox,
-            "Success!",
-            "<b>ArcoLinux Tweak Tool</b> has been installed successfully",
-        )  # noqa
-
-    # def get_message(self, title, message):
-    #     t = threading.Thread(target=self.fetch_notice,
-
-
-#                              args=(title, message,))
-#     t.daemon = True
-#     t.start()
-#     t.join()
-
-# def fetch_notice(self, title, message):
-#     try:
-#         url = 'https://bradheff.github.io/notice/notice'
-#         req = requests.get(url, verify=True, timeout=1)
-
-#         if req.status_code == requests.codes.ok:
-#             if not len(req.text) <= 1:
-#                 title.set_markup(
-#                 "<big><b><u>Notice</u></b></big>")
-#                 message.set_markup(req.text)
-#                 self.results = True
-#             else:
-#                 self.results = False
-#         else:
-#             self.results = False
-#     except:
-#         self.results = False
-
+    # def installATT(self):
+    #     subprocess.call(
+    #         [
+    #             "pkexec",
+    #             "/usr/bin/pacman",
+    #             "-S",
+    #             "archlinux-tweak-tool-git",
+    #             "--noconfirm",
+    #         ],
+    #         shell=False,
+    #     )
+    #     GLib.idle_add(
+    #         self.MessageBox,
+    #         "Success!",
+    #         "<b>ArcoLinux Tweak Tool</b> has been installed successfully",
+    #     )  # noqa
 
 if __name__ == "__main__":
     w = Main()
