@@ -686,7 +686,7 @@ class Main(Gtk.Window):
                     )
                     GLib.idle_add(
                         self.label_notify.set_markup,
-                        "<span foreground='orange'><b>Package %s installed</b></span>"
+                        "<span foreground='purple'><b>Package %s installed</b></span>"
                         % package,
                     )
                     GLib.idle_add(
@@ -852,8 +852,8 @@ class Main(Gtk.Window):
                 self.label_notify.set_name("label_style")
                 GLib.idle_add(
                     self.label_notify.set_markup,
-                    f"<span foreground='red'><b>Not connected to internet</b>\n"
-                    f"Calamares will <b>not</b> install additional software</span>",
+                    f"<span foreground='red'><b>No internet!</b>\n"
+                    f"Snigdha OS will <b>not</b> install any additional packages!</span>",
                 )  # noqa
             else:
                 self.label_notify.set_name("")
