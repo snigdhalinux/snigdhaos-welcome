@@ -1,6 +1,6 @@
-# =================================================================
-# =          Authors: Brad Heffernan & Erik Dubois                =
-# =================================================================
+# Author: Erik Dubois [Arcolinux]
+#
+#
 
 import os
 import getpass
@@ -393,7 +393,7 @@ def GUI(self, Gtk, GdkPixbuf):
         stack.add_titled(vbox_install_stack, "Welcome", "Welcome")
 
     stack.add_titled(vbox_info_stack, "Information", "Information")
-    stack.add_titled(vbox_credits_stack, "Credits", "Credits")
+    stack.add_titled(vbox_credits_stack, "Developers", "Developers")
 
     autostart = eval(self.load_settings())
 

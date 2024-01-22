@@ -14,11 +14,7 @@ base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 # generic Message Dialog with yes/no buttons
 class MessageDialog(Gtk.Dialog):
-    def __init__(
-        self,
-        title,
-        message,
-    ):
+    def __init__(self, title, message):
         Gtk.Dialog.__init__(self)
 
         self.set_border_width(10)
@@ -35,9 +31,7 @@ class MessageDialog(Gtk.Dialog):
 
         headerbar.pack_start(
             Gtk.Image().new_from_pixbuf(
-                GdkPixbuf.Pixbuf().new_from_file_at_size(
-                    os.path.join(base_dir, "images/logo.png"), 16, 16
-                )
+                GdkPixbuf.Pixbuf().new_from_file_at_size(os.path.join(base_dir, "images/logo.png"), 24, 24)
             )
         )
 
