@@ -8,17 +8,18 @@ from os.path import expanduser
 from ui.Stack import Stack
 from ui.StackSwitcher import StackSwitcher
 
-debug = False
+# debug = False
+debug = True
 
 base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 home = expanduser("~")
 username = getpass.getuser()
 
-app_discord = "https://discord.gg/stBhS4taje"
-app_website = "https://arcolinux.info"
-app_forums = "https://www.arcolinuxforum.com"
-app_telegram = "https://t.me/arcolinux_d_b"
-app_youtube = "https://www.youtube.com/erikdubois"
+app_discord = "#"
+app_website = "https://snigdhaos.org/"
+app_forums = "https://forum.snigdhaos.org/"
+app_facebook = "https://facebook.com/snigdhalinux/"
+app_twitter = "https://twitter.com/snigdhaos/"
 
 if debug:
     user = username
@@ -112,7 +113,7 @@ def GUI(self, Gtk, GdkPixbuf):
     hbox_social_links.set_halign(Gtk.Align.CENTER)
 
     # social links with images
-    hbox_social_img = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5)
+    hbox_social_img = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=25)
     hbox_social_img.set_halign(Gtk.Align.CENTER)
 
     label_discord = Gtk.Label(xalign=0, yalign=0)
@@ -122,12 +123,12 @@ def GUI(self, Gtk, GdkPixbuf):
 
     label_telegram = Gtk.Label(xalign=0, yalign=0)
     label_telegram.set_markup(
-        "<a href='%s' title='%s'>%s</a>" % (app_telegram, app_telegram, "Telegram")
+        "<a href='%s' title='%s'>%s</a>" % (app_facebook, app_facebook, "Facebook")
     )
 
     label_youtube = Gtk.Label(xalign=0, yalign=0)
     label_youtube.set_markup(
-        "<a href='%s' title='%s'>%s</a>" % (app_youtube, app_youtube, "Youtube")
+        "<a href='%s' title='%s'>%s</a>" % (app_twitter, app_twitter, "Twitter")
     )
 
     label_forums = Gtk.Label(xalign=0, yalign=0)
@@ -143,14 +144,14 @@ def GUI(self, Gtk, GdkPixbuf):
 
     fb_event = Gtk.EventBox()
     pbfb = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/facebook.png"), 28, 28
+        os.path.join(base_dir, "images/social-media.png"), 64, 64
     )
     fbimage = Gtk.Image().new_from_pixbuf(pbfb)
     fb_event.add(fbimage)
     fb_event.connect(
         "button_press_event",
         self.on_social_clicked,
-        "https://www.facebook.com/groups/arcolinux",
+        "https://www.facebook.com/snigdhalinux/",
     )
 
     # telegram
@@ -163,33 +164,33 @@ def GUI(self, Gtk, GdkPixbuf):
     tg_event.connect(
         "button_press_event",
         self.on_social_clicked,
-        app_telegram,
+        app_facebook,
     )
 
     # twitter
     tw_event = Gtk.EventBox()
     pbtw = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/twitter.png"), 28, 28
+        os.path.join(base_dir, "images/twitter.png"), 64, 64
     )
     twimage = Gtk.Image().new_from_pixbuf(pbtw)
     tw_event.add(twimage)
     tw_event.connect(
         "button_press_event",
         self.on_social_clicked,
-        "https://twitter.com/arcolinux",
+        "https://twitter.com/snigdhaos",
     )
 
     # mewe
     mew_event = Gtk.EventBox()
     pbmew = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/mewe.png"), 28, 28
+        os.path.join(base_dir, "images/github.png"), 64, 64
     )
     mewimage = Gtk.Image().new_from_pixbuf(pbmew)
     mew_event.add(mewimage)
     mew_event.connect(
         "button_press_event",
         self.on_social_clicked,
-        "https://mewe.com/group/5bbc4577a40f3002b313671d",
+        "https://github.com/snigdhalinux",
     )
 
     # discord
@@ -297,7 +298,7 @@ def GUI(self, Gtk, GdkPixbuf):
 
     fb_event.connect("query-tooltip", self.tooltip_callback, "Facebook")
     tw_event.connect("query-tooltip", self.tooltip_callback, "Twitter")
-    mew_event.connect("query-tooltip", self.tooltip_callback, "Mewe")
+    mew_event.connect("query-tooltip", self.tooltip_callback, "Github")
     insta_event.connect("query-tooltip", self.tooltip_callback, "Instagram")
     lin_event.connect("query-tooltip", self.tooltip_callback, "LinkedIn")
     el_event.connect("query-tooltip", self.tooltip_callback, "Element")
@@ -308,9 +309,9 @@ def GUI(self, Gtk, GdkPixbuf):
     tg_event.connect("query-tooltip", self.tooltip_callback, "Telegram")
     att_event.connect("query-tooltip", self.tooltip_callback, "Arch Linux Tweak Tool")
 
-    # hbox_social_img.add(fb_event)
-    # hbox_social_img.add(tw_event)
-    # hbox_social_img.add(mew_event)
+    hbox_social_img.add(fb_event)
+    hbox_social_img.add(tw_event)
+    hbox_social_img.add(mew_event)
     # hbox_social_img.add(insta_event)
     # hbox_social_img.add(lin_event)
     # hbox_social_img.add(el_event)
@@ -336,20 +337,20 @@ def GUI(self, Gtk, GdkPixbuf):
     label_info2.set_justify(Gtk.Justification.CENTER)
 
     if debug is True:
-        label_info_header1.set_markup("<b>ArcoLinux Installer</b>")
+        label_info_header1.set_markup("<b>Snigdha OS - Arctic Installer</b>")
 
         desc = (
-            f"We advise to clean the computer with GParted before installing.\n"
-            f"During the Calamares installation many options will be open to you.\n\n"
-            f"<b>Easy installation</b> (Recommended) option is offline, no internet connection required\n"
-            f"<b>Advanced installation</b> option is online, this requires a working internet connection"
+            f"Clean You Computer With GParted before installing Snigdha OS.\n"
+            f"During the <b>Online Installation</b> many options will be open to you.\n\n"
+            f"<b>Offline Installation</b> does not require internet connection.\n"
+            f"<b>Online installation</b> (Recommended) requires a working internet connection"
         )
 
         desc2 = (
             f"We communicate with our community via a diversity of social media.\n"
             f"Do join us to learn the latest news, ask questions or for casual talk.\n"
-            f"Join us <b> <a href='{app_youtube}' title='{app_youtube}'>Youtube</a></b> as we communicate and teach via our Youtube channel.\n"
-            f"<b> <a href='{app_telegram}' title='{app_telegram}'>Telegram</a></b> is for chitchat - <b> <a href='{app_discord}' title='{app_discord}'>Discord</a></b> is for assistance.\n"
+            f"Join us <b> <a href='{app_twitter}' title='{app_twitter}'>Youtube</a></b> as we communicate and teach via our Youtube channel.\n"
+            f"<b> <a href='{app_facebook}' title='{app_facebook}'>Telegram</a></b> is for chitchat - <b> <a href='{app_discord}' title='{app_discord}'>Discord</a></b> is for assistance.\n"
             f"We have a <b> <a href='{app_forums}' title='{app_forums}'>Forum</a></b> for the longer and more technical questions.\n\n"
         )
 
@@ -360,8 +361,8 @@ def GUI(self, Gtk, GdkPixbuf):
         desc = (
             f"We communicate with our community via a diversity of social media.\n"
             f"Do join us to learn the latest news, ask questions or for casual talk.\n"
-            f"Join us <b> <a href='{app_youtube}' title='{app_youtube}'>Youtube</a></b> as we communicate and teach via our Youtube channel.\n"
-            f"<b> <a href='{app_telegram}' title='{app_telegram}'>Telegram</a></b> is for chitchat - <b> <a href='{app_discord}' title='{app_discord}'>Discord</a></b> is for assistance.\n"
+            f"Join us <b> <a href='{app_twitter}' title='{app_twitter}'>Youtube</a></b> as we communicate and teach via our Youtube channel.\n"
+            f"<b> <a href='{app_facebook}' title='{app_facebook}'>Telegram</a></b> is for chitchat - <b> <a href='{app_discord}' title='{app_discord}'>Discord</a></b> is for assistance.\n"
             f"We have a <b> <a href='{app_forums}' title='{app_forums}'>Forum</a></b> for the longer and more technical questions.\n\n"
         )
 
@@ -499,13 +500,13 @@ def GUI(self, Gtk, GdkPixbuf):
     self.button_mirrors = Gtk.Button(label="")
     button_mirrors_label = self.button_mirrors.get_child()
 
-    button_mirrors_label.set_markup("<b>Update Arch Mirrors</b>")
+    button_mirrors_label.set_markup("Update Mirrors")
 
     self.button_mirrors.connect("clicked", self.on_mirror_clicked)
-    self.button_mirrors.set_size_request(100, 30)
+    self.button_mirrors.set_size_request(100, 50)
     self.button_mirrors.set_property("has-tooltip", True)
     self.button_mirrors.connect(
-        "query-tooltip", self.tooltip_callback, "Update Arch Linux Mirrorlist"
+        "query-tooltip", self.tooltip_callback, "Update Mirrorlist"
     )
 
     # ======================================================================
@@ -538,8 +539,8 @@ def GUI(self, Gtk, GdkPixbuf):
     #                   BUTTON - ARANDR
     # ======================================================================
 
-    button_resolution = Gtk.Button(label="Screen Resolution")
-    button_resolution.set_size_request(100, 30)
+    button_resolution = Gtk.Button(label="Fix Screen Resolution")
+    button_resolution.set_size_request(100, 50)
     button_resolution.set_property("has-tooltip", True)
     button_resolution.connect("query-tooltip", self.tooltip_callback, "Launch Arandr")
     button_resolution.connect("clicked", self.on_buttonarandr_clicked)
@@ -558,7 +559,7 @@ def GUI(self, Gtk, GdkPixbuf):
         # self.button_att.set_size_request(100, 30)
         # self.button_sofi.set_size_request(100, 30)
 
-        self.button_mirrors.get_child().set_markup("<b>Update Mirrors</b>")
+        self.button_mirrors.get_child().set_markup("Update Mirrors")
 
         # self.button_att.get_child().set_markup("<b>Launch Arch Linux Tweak Tool</b>")
 
@@ -602,14 +603,14 @@ def GUI(self, Gtk, GdkPixbuf):
 
     label_credits_title = Gtk.Label(xalign=0.5, yalign=0.5)
     label_credits_title.set_name("label_style")
-    label_credits_title.set_markup("<b>Development Team</b>")
+    label_credits_title.set_markup("<b>Meet The Developers</b>")
     label_credits_title.set_halign(Gtk.Align.CENTER)
     label_credits_title.set_justify(Gtk.Justification.CENTER)
 
     label_credits_support = Gtk.Label(xalign=0.5, yalign=0.5)
     label_credits_support.set_name("label_style")
     label_credits_support.set_markup(
-        f"For support or to report any issues use <b><a href='{app_discord}' title='{app_discord}'>Discord</a></b>"
+        f"For support or to report any issues use <b><a href='{app_forums}' title='{app_forums}'>Snigdha OS Forum</a></b>"
     )
     label_credits_support.set_halign(Gtk.Align.CENTER)
     label_credits_support.set_justify(Gtk.Justification.CENTER)
@@ -638,8 +639,8 @@ def GUI(self, Gtk, GdkPixbuf):
     # ======================================================================
 
     button_quit = Gtk.Button(label="")
-    button_quit.get_child().set_markup("<b>Exit</b>")
-    button_quit.set_size_request(100, 30)
+    button_quit.get_child().set_markup("<b>EXIT</b>")
+    button_quit.set_size_request(100, 40)
     button_quit.connect("clicked", Gtk.main_quit)
 
     vbox_quit.pack_start(button_quit, False, False, 0)
@@ -663,7 +664,7 @@ def GUI(self, Gtk, GdkPixbuf):
     if username == user:
         hbox_footer_buttons.pack_start(hbox_user, True, False, 0)
 
-        vbox_auto_start = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        vbox_auto_start = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=15)
         vbox_auto_start.set_halign(Gtk.Align.CENTER)
         vbox_auto_start.pack_end(check, True, False, 0)
         self.vbox.pack_end(vbox_auto_start, True, False, 0)

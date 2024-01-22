@@ -88,7 +88,7 @@ class MessageDialogBootloader(Gtk.Dialog):
     ):
         Gtk.Dialog.__init__(self)
 
-        self.set_border_width(10)
+        self.set_border_width(20)
         self.set_title(title)
         self.set_modal(True)
         # self.set_default_size(600, 100)
@@ -108,7 +108,7 @@ class MessageDialogBootloader(Gtk.Dialog):
         headerbar.pack_start(
             Gtk.Image().new_from_pixbuf(
                 GdkPixbuf.Pixbuf().new_from_file_at_size(
-                    os.path.join(base_dir, "images/logo.png"), 16, 16
+                    os.path.join(base_dir, "images/logo.png"), 24, 24
                 )
             )
         )
@@ -116,7 +116,7 @@ class MessageDialogBootloader(Gtk.Dialog):
         self.set_titlebar(headerbar)
 
         btn_cancel = Gtk.Button(label="Cancel")
-        btn_cancel.set_size_request(100, 30)
+        btn_cancel.set_size_request(100, 50)
         btn_cancel.connect("clicked", self.on_md_cancel_clicked)
         btn_cancel.set_halign(Gtk.Align.END)
 
@@ -127,11 +127,11 @@ class MessageDialogBootloader(Gtk.Dialog):
         )
 
         btn_bootloader_grub = Gtk.Button(label="Install Grub")
-        btn_bootloader_grub.set_size_request(100, 30)
+        btn_bootloader_grub.set_size_request(100, 50)
         btn_bootloader_grub.connect("clicked", self.on_bootloader_grub_clicked)
 
         btn_bootloader_systemd_boot = Gtk.Button(label="Install Systemd-boot")
-        btn_bootloader_systemd_boot.set_size_request(100, 30)
+        btn_bootloader_systemd_boot.set_size_request(100, 50)
         btn_bootloader_systemd_boot.connect(
             "clicked", self.on_bootloader_systemd_boot_clicked
         )
@@ -161,7 +161,7 @@ class MessageDialogBootloader(Gtk.Dialog):
         vbox_cancel = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         vbox_cancel.pack_end(btn_cancel, False, False, 0)
 
-        self.vbox.set_spacing(10)
+        self.vbox.set_spacing(20)
 
         self.vbox.add(label_title_message)
         self.vbox.add(label_title_second_message)
@@ -188,7 +188,7 @@ class MessageDialogBootloader(Gtk.Dialog):
                 subprocess.Popen([self.calamares_polkit, "-d"], shell=False)
             else:
                 print(
-                    "[ERROR]: %s not found, are you sure you are on a Live ISO?"
+                    "[ERROR]: %s not found, Make sure you are on a Live ISO?"
                     % bootloader_file
                 )
 
@@ -196,7 +196,7 @@ class MessageDialogBootloader(Gtk.Dialog):
                     self.label_message.destroy()
 
                 self.label_message.set_markup(
-                    "<span foreground='red'><b>%s not found\nAre you sure you are on a Live ISO?</b></span>"
+                    "<span foreground='red'><b>%s not found\nMake sure you are on a Live ISO?</b></span>"
                     % bootloader_file
                 )
 
@@ -213,7 +213,7 @@ class MessageDialogBootloader(Gtk.Dialog):
                 self.label_message.destroy()
 
             self.label_message.set_markup(
-                "<span foreground='orange'><b Pacman lockfile found %s, is another pacman process running ?</b></span>"
+                "<span foreground='red'><b Pacman lockfile found %s, is another pacman process running ?</b></span>"
                 % self.pacman_lockfile
             )
 
@@ -239,13 +239,13 @@ class MessageDialogBootloader(Gtk.Dialog):
                 subprocess.Popen([self.calamares_polkit, "-d"], shell=False)
 
             else:
-                print("[ERROR]: %s not found, are you on a Live ISO?" % bootloader_file)
+                print("[ERROR]: %s not found, Make sure you are on a Live ISO?" % bootloader_file)
 
                 if self.label_message is not None:
                     self.label_message.destroy()
 
                 self.label_message.set_markup(
-                    "<span foreground='red'><b>%s not found\nAre you sure you are on a Live ISO?</b></span>"
+                    "<span foreground='red'><b>%s not found\nMake sure you are on a Live ISO?</b></span>"
                     % bootloader_file
                 )
 

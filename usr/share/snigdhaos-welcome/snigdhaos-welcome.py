@@ -256,7 +256,7 @@ class Main(Gtk.Window):
             app_cmd = [
                 "sudo",
                 "cp",
-                "/etc/calamares/settings-advanced.conf",
+                settings_adv_file,
                 "/etc/calamares/settings.conf",
             ]
             threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
@@ -324,7 +324,7 @@ class Main(Gtk.Window):
                 )
                 md.add_buttons("Yes", 1)
                 md.add_buttons("No", 0)
-                md.format_secondary_markup("Would you like to install it ?")
+                md.format_secondary_markup("Let Snigdha OS - Welcome install it ?")
                 response = md.run()
                 md.destroy()
 
@@ -385,7 +385,7 @@ class Main(Gtk.Window):
             if not os.path.exists(self.pacman_lockfile):
                 md = MessageDialog(
                     title="Install Package",
-                    message="<b>Arch Linux Tweak Tool</b> is missing, would you like to install it ?",
+                    message="<b>Arch Linux Tweak Tool</b> is missing, Let Snigdha OS - Welcome install it ?",
                 )
 
                 md.show_all()
@@ -467,7 +467,7 @@ class Main(Gtk.Window):
                 )
                 md.add_buttons("Yes", 1)
                 md.add_buttons("No", 0)
-                md.format_secondary_markup("Would you like to install it ?")
+                md.format_secondary_markup("Let Snigdha OS - Welcome install it ?")
                 response = md.run()
                 md.destroy()
 
@@ -527,7 +527,7 @@ class Main(Gtk.Window):
             if not os.path.exists(self.pacman_lockfile):
                 md = MessageDialog(
                     title="Install Package",
-                    message="<b>Sofirem</b> is missing, would you like to install it ?",
+                    message="<b>Sofirem</b> is missing, Let Snigdha OS - Welcome install it ?",
                 )
 
                 md.show_all()
@@ -823,7 +823,7 @@ class Main(Gtk.Window):
         else:
             md = MessageDialog(
                 title="Install Package",
-                message="<b>Arch Linux Tweak Tool</b> is missing, would you like to install it ?",
+                message="<b>Arch Linux Tweak Tool</b> is missing, Let Snigdha OS - Welcome install it ?",
             )
 
             md.show_all()
@@ -882,7 +882,7 @@ class Main(Gtk.Window):
     def mirror_update(self):
         GLib.idle_add(
             self.label_notify.set_markup,
-            f"<span foreground='cyan'><b>Updating your mirrorlist</b>\n"
+            f"<span foreground='cyan'>Updating Arch Mirrorlist\n"
             f"This may take some time, please wait...</span>",
         )  # noqa
         GLib.idle_add(self.button_mirrors.set_sensitive, False)
@@ -903,7 +903,7 @@ class Main(Gtk.Window):
         print("Update mirrors completed")
         GLib.idle_add(
             self.label_notify.set_markup,
-            f"<span foreground='cyan'><b>Updating your C mirrorlist</b>\n"
+            f"<span foreground='cyan'>Updating Chaotic Aur Mirrorlist\n"
             f"This may take some time, please wait...</span>",
         )  # noqa
         GLib.idle_add(self.button_mirrors.set_sensitive, False)
