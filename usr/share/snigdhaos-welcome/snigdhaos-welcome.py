@@ -77,7 +77,7 @@ class Main(Gtk.Window):
     def __init__(self):
         super(Main, self).__init__(title="Snigdha OS Welcome - Arctic")
         self.set_border_width(10)
-        self.set_default_size(860, 250)
+        self.set_default_size(860, 450)
         self.set_icon_from_file(os.path.join(base_dir, "images/logo.png"))
         self.set_position(Gtk.WindowPosition.CENTER)
         self.results = ""
@@ -637,44 +637,6 @@ class Main(Gtk.Window):
         tooltip.set_text(text)
         return True
 
-    # def on_launch_clicked(self, widget, event, link):
-    #     app_cmd = [
-    #         "/usr/bin/archlinux-tweak-tool",
-    #     ]
-    #     pacman_cmd = [
-    #         "pkexec",
-    #         "pacman",
-    #         "-Sy",
-    #         "archlinux-tweak-tool-git",
-    #         "--noconfirm",
-    #         "--needed",
-    #     ]
-
-    #     if os.path.isfile("/usr/bin/archlinux-tweak-tool"):
-    #         threading.Thread(target=self.run_app, args=(app_cmd,), daemon=True).start()
-
-    #     else:
-    #         md = MessageDialog(
-    #             title="Install Package",
-    #             message="<b>Arch Linux Tweak Tool</b> is missing, Let Snigdha OS - Welcome install it ?",
-    #         )
-
-    #         md.show_all()
-    #         md.run()
-    #         md.destroy()
-
-    #         if md.response is True:
-    #             threading.Thread(target=self.check_package_queue, daemon=True).start()
-    #             threading.Thread(
-    #                 target=self.install_package,
-    #                 args=(
-    #                     app_cmd,
-    #                     pacman_cmd,
-    #                     "archlinux-tweak-tool-git",
-    #                 ),
-    #                 daemon=True,
-    #             ).start()
-
     def internet_notifier(self):
         bb = 0
         dis = 0
@@ -755,23 +717,6 @@ class Main(Gtk.Window):
         md.format_secondary_markup(message)
         md.run()
         md.destroy()
-
-    # def installATT(self):
-    #     subprocess.call(
-    #         [
-    #             "pkexec",
-    #             "/usr/bin/pacman",
-    #             "-S",
-    #             "archlinux-tweak-tool-git",
-    #             "--noconfirm",
-    #         ],
-    #         shell=False,
-    #     )
-    #     GLib.idle_add(
-    #         self.MessageBox,
-    #         "Success!",
-    #         "<b>ArcoLinux Tweak Tool</b> has been installed successfully",
-    #     )  # noqa
 
 if __name__ == "__main__":
     w = Main()
