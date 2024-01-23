@@ -161,7 +161,7 @@ class Main(Gtk.Window):
         if not os.path.exists(self.pacman_lockfile):
             widget.set_name("button_easy_install_enabled")
             widget.get_child().set_markup(
-                "<span size='large'><b>Offline Installation</b></span>"
+                "<span size='large'>Offline Installation</span>"
             )
             # DEPRECATED NOTICE: get_style_context deprecated in gtk 4.10 and will be removed in gtk 5.0
             selected_bg_color = widget.get_style_context().lookup_color(
@@ -234,7 +234,7 @@ class Main(Gtk.Window):
         if not os.path.exists(self.pacman_lockfile):
             widget.set_name("button_adv_install_enabled")
             widget.get_child().set_markup(
-                "<span size='large'><b>Online Installation</b></span>"
+                "<span size='large'>Online Installation</span>"
             )
 
             # DEPRECATED NOTICE: get_style_context deprecated in gtk 4.10 and will be removed in gtk 5.0
