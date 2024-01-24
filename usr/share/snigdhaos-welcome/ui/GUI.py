@@ -8,8 +8,8 @@ from os.path import expanduser
 from ui.Stack import Stack
 from ui.StackSwitcher import StackSwitcher
 
-# debug = False
-debug = True
+debug = False
+# debug = True
 
 base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 home = expanduser("~")
