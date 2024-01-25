@@ -31,7 +31,7 @@ class MessageDialog(Gtk.Dialog):
 
         headerbar.pack_start(
             Gtk.Image().new_from_pixbuf(
-                GdkPixbuf.Pixbuf().new_from_file_at_size(os.path.join(base_dir, "images/logo.png"), 24, 24)
+                GdkPixbuf.Pixbuf().new_from_file_at_size(os.path.join(base_dir, "images/snigdhaos-icon.png"), 24, 24)
             )
         )
 
@@ -102,7 +102,7 @@ class MessageDialogBootloader(Gtk.Dialog):
         headerbar.pack_start(
             Gtk.Image().new_from_pixbuf(
                 GdkPixbuf.Pixbuf().new_from_file_at_size(
-                    os.path.join(base_dir, "images/logo.png"), 24, 24
+                    os.path.join(base_dir, "images/snigdhaos-icon.png"), 24, 24
                 )
             )
         )
