@@ -347,11 +347,11 @@ def GUI(self, Gtk, GdkPixbuf):
         )
 
         desc2 = (
-            f"We communicate with our community via a diversity of social media.\n"
-            f"Do join us to learn the latest news, ask questions or for casual talk.\n"
-            f"Join us <b> <a href='{app_twitter}' title='{app_twitter}'>Youtube</a></b> as we communicate and teach via our Youtube channel.\n"
-            f"<b> <a href='{app_facebook}' title='{app_facebook}'>Telegram</a></b> is for chitchat - <b> <a href='{app_discord}' title='{app_discord}'>Discord</a></b> is for assistance.\n"
-            f"We have a <b> <a href='{app_forums}' title='{app_forums}'>Forum</a></b> for the longer and more technical questions.\n\n"
+            f"Welcome to A Blazing Fast and Optimized Operating System.\n"
+            f"Snigdha OS\n"
+            f"Follow our facebook Page to get update about latest news and upcoming features.\n"
+            f"Also you can follow us on github and suggest more features.\n"
+            f"Get Registered for beta testing[Beta Image may be unstable.]\n\n"
         )
 
         label_info2.set_markup(desc2)
@@ -359,11 +359,11 @@ def GUI(self, Gtk, GdkPixbuf):
     else:
         label_info_header1.set_markup("<b>Welcome to Snigdha OS - Arctic</b>")
         desc = (
-            f"We communicate with our community via a diversity of social media.\n"
-            f"Do join us to learn the latest news, ask questions or for casual talk.\n"
-            f"Join us <b> <a href='{app_twitter}' title='{app_twitter}'>Youtube</a></b> as we communicate and teach via our Youtube channel.\n"
-            f"<b> <a href='{app_facebook}' title='{app_facebook}'>Telegram</a></b> is for chitchat - <b> <a href='{app_discord}' title='{app_discord}'>Discord</a></b> is for assistance.\n"
-            f"We have a <b> <a href='{app_forums}' title='{app_forums}'>Forum</a></b> for the longer and more technical questions.\n\n"
+            f"Welcome to A Blazing Fast and Optimized Operating System.\n"
+            f"Snigdha OS\n"
+            f"Follow our facebook Page to get update about latest news and upcoming features.\n"
+            f"Also you can follow us on github and suggest more features.\n"
+            f"Get Registered for beta testing[Beta Image may be unstable.]\n\n"
         )
 
     label_info = Gtk.Label(xalign=0, yalign=0)
