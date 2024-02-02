@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-# =================================================================
-# =          Authors: Brad Heffernan & Erik Dubois                =
-# =================================================================
+
 import gi
 import os
 import conflicts
@@ -66,7 +64,7 @@ label#label_style_eshan {
     border-radius: 0px;
     font-size: 16px;
     font-weight: bold;
-    color: red;
+    color: blood-red;
 }
 """
 
