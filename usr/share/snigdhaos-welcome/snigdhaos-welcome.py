@@ -70,7 +70,6 @@ label#label_style_eshan {
 }
 """
 
-
 class Main(Gtk.Window):
     def __init__(self):
         super(Main, self).__init__(title="Snigdha OS Welcome - Arctic")
@@ -656,7 +655,13 @@ class Main(Gtk.Window):
                     bb = 1
             sleep(3)
 
-
+    def check_package_installed(self, package):
+        try:
+            subprocess.check_output("pacman -Qi " + package, shell=True, stderr=subprocess.STDOUT)
+            return True
+        except subprocess.CalledProcessError:
+            return False
+        
     def mirror_update(self):
         GLib.idle_add(
             self.label_notify.set_markup,
