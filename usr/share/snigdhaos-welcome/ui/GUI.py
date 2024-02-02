@@ -154,17 +154,17 @@ def GUI(self, Gtk, GdkPixbuf):
     )
 
     # telegram
-    tg_event = Gtk.EventBox()
-    pbtg = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/tg.png"), 28, 28
-    )
-    tgimage = Gtk.Image().new_from_pixbuf(pbtg)
-    tg_event.add(tgimage)
-    tg_event.connect(
-        "button_press_event",
-        self.on_social_clicked,
-        app_facebook,
-    )
+    # tg_event = Gtk.EventBox()
+    # pbtg = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/tg.png"), 28, 28
+    # )
+    # tgimage = Gtk.Image().new_from_pixbuf(pbtg)
+    # tg_event.add(tgimage)
+    # tg_event.connect(
+    #     "button_press_event",
+    #     self.on_social_clicked,
+    #     app_facebook,
+    # )
 
     # twitter
     tw_event = Gtk.EventBox()
@@ -193,82 +193,82 @@ def GUI(self, Gtk, GdkPixbuf):
     )
 
     # discord
-    ds_event = Gtk.EventBox()
-    pbds = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/discord.png"), 28, 28
-    )
-    dsimage = Gtk.Image().new_from_pixbuf(pbds)
-    ds_event.add(dsimage)
-    ds_event.connect(
-        "button_press_event",
-        self.on_social_clicked,
-        app_discord,
-    )
+    # ds_event = Gtk.EventBox()
+    # pbds = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/discord.png"), 28, 28
+    # )
+    # dsimage = Gtk.Image().new_from_pixbuf(pbds)
+    # ds_event.add(dsimage)
+    # ds_event.connect(
+    #     "button_press_event",
+    #     self.on_social_clicked,
+    #     app_discord,
+    # )
 
     # youtube
-    yt_event = Gtk.EventBox()
-    pbyt = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/youtube.png"), 28, 28
-    )
-    ytimage = Gtk.Image().new_from_pixbuf(pbyt)
-    yt_event.add(ytimage)
-    yt_event.connect(
-        "button_press_event",
-        self.on_social_clicked,
-        "https://youtube.com/c/erikdubois",
-    )
+    # yt_event = Gtk.EventBox()
+    # pbyt = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/youtube.png"), 28, 28
+    # )
+    # ytimage = Gtk.Image().new_from_pixbuf(pbyt)
+    # yt_event.add(ytimage)
+    # yt_event.connect(
+    #     "button_press_event",
+    #     self.on_social_clicked,
+    #     "https://youtube.com/c/erikdubois",
+    # )
 
     # instagram
-    insta_event = Gtk.EventBox()
-    pbinsta = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/insta.png"), 28, 28
-    )
-    instaimage = Gtk.Image().new_from_pixbuf(pbinsta)
-    insta_event.add(instaimage)
-    insta_event.connect(
-        "button_press_event",
-        self.on_social_clicked,
-        "https://www.instagram.com/arcolinux/",
-    )
+    # insta_event = Gtk.EventBox()
+    # pbinsta = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/insta.png"), 28, 28
+    # )
+    # instaimage = Gtk.Image().new_from_pixbuf(pbinsta)
+    # insta_event.add(instaimage)
+    # insta_event.connect(
+    #     "button_press_event",
+    #     self.on_social_clicked,
+    #     "https://www.instagram.com/arcolinux/",
+    # )
 
     # linkedin
-    lin_event = Gtk.EventBox()
-    pblin = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/linkedin.png"), 28, 28
-    )
-    linimage = Gtk.Image().new_from_pixbuf(pblin)
-    lin_event.add(linimage)
-    lin_event.connect(
-        "button_press_event",
-        self.on_social_clicked,
-        "https://www.linkedin.com/in/arcolinux/",
-    )
+    # lin_event = Gtk.EventBox()
+    # pblin = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/linkedin.png"), 28, 28
+    # )
+    # linimage = Gtk.Image().new_from_pixbuf(pblin)
+    # lin_event.add(linimage)
+    # lin_event.connect(
+    #     "button_press_event",
+    #     self.on_social_clicked,
+    #     "https://www.linkedin.com/in/arcolinux/",
+    # )
 
     # patreon
-    pat_event = Gtk.EventBox()
-    pbpat = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/patreon.png"), 28, 28
-    )
-    patimage = Gtk.Image().new_from_pixbuf(pbpat)
-    pat_event.add(patimage)
-    pat_event.connect(
-        "button_press_event",
-        self.on_social_clicked,
-        "https://www.patreon.com/arcolinux",
-    )
+    # pat_event = Gtk.EventBox()
+    # pbpat = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/patreon.png"), 28, 28
+    # )
+    # patimage = Gtk.Image().new_from_pixbuf(pbpat)
+    # pat_event.add(patimage)
+    # pat_event.connect(
+    #     "button_press_event",
+    #     self.on_social_clicked,
+    #     "https://www.patreon.com/arcolinux",
+    # )
 
     # element
-    el_event = Gtk.EventBox()
-    pbel = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/element.png"), 28, 28
-    )
-    elimage = Gtk.Image().new_from_pixbuf(pbel)
-    el_event.add(elimage)
-    el_event.connect(
-        "button_press_event",
-        self.on_social_clicked,
-        "https://app.element.io/#/room/!jUDkosOsuDbGWNzKYl:matrix.org",
-    )
+    # el_event = Gtk.EventBox()
+    # pbel = GdkPixbuf.Pixbuf().new_from_file_at_size(
+    #     os.path.join(base_dir, "images/element.png"), 28, 28
+    # )
+    # elimage = Gtk.Image().new_from_pixbuf(pbel)
+    # el_event.add(elimage)
+    # el_event.connect(
+    #     "button_press_event",
+    #     self.on_social_clicked,
+    #     "https://app.element.io/#/room/!jUDkosOsuDbGWNzKYl:matrix.org",
+    # )
 
     # att
     # att_event = Gtk.EventBox()
@@ -286,26 +286,26 @@ def GUI(self, Gtk, GdkPixbuf):
     fb_event.set_property("has-tooltip", True)
     tw_event.set_property("has-tooltip", True)
     mew_event.set_property("has-tooltip", True)
-    insta_event.set_property("has-tooltip", True)
-    lin_event.set_property("has-tooltip", True)
-    el_event.set_property("has-tooltip", True)
-    pat_event.set_property("has-tooltip", True)
-    yt_event.set_property("has-tooltip", True)
-    ds_event.set_property("has-tooltip", True)
-    tg_event.set_property("has-tooltip", True)
+    # insta_event.set_property("has-tooltip", True)
+    # lin_event.set_property("has-tooltip", True)
+    # el_event.set_property("has-tooltip", True)
+    # pat_event.set_property("has-tooltip", True)
+    # yt_event.set_property("has-tooltip", True)
+    # ds_event.set_property("has-tooltip", True)
+    # tg_event.set_property("has-tooltip", True)
     # att_event.set_property("has-tooltip", True)
 
     fb_event.connect("query-tooltip", self.tooltip_callback, "Facebook")
     tw_event.connect("query-tooltip", self.tooltip_callback, "Twitter")
     mew_event.connect("query-tooltip", self.tooltip_callback, "Github")
-    insta_event.connect("query-tooltip", self.tooltip_callback, "Instagram")
-    lin_event.connect("query-tooltip", self.tooltip_callback, "LinkedIn")
-    el_event.connect("query-tooltip", self.tooltip_callback, "Element")
-    el_event.connect("query-tooltip", self.tooltip_callback, "Element-Matrix")
-    pat_event.connect("query-tooltip", self.tooltip_callback, "Patreon")
-    yt_event.connect("query-tooltip", self.tooltip_callback, "YouTube")
-    ds_event.connect("query-tooltip", self.tooltip_callback, "Discord")
-    tg_event.connect("query-tooltip", self.tooltip_callback, "Telegram")
+    # insta_event.connect("query-tooltip", self.tooltip_callback, "Instagram")
+    # lin_event.connect("query-tooltip", self.tooltip_callback, "LinkedIn")
+    # el_event.connect("query-tooltip", self.tooltip_callback, "Element")
+    # el_event.connect("query-tooltip", self.tooltip_callback, "Element-Matrix")
+    # pat_event.connect("query-tooltip", self.tooltip_callback, "Patreon")
+    # yt_event.connect("query-tooltip", self.tooltip_callback, "YouTube")
+    # ds_event.connect("query-tooltip", self.tooltip_callback, "Discord")
+    # tg_event.connect("query-tooltip", self.tooltip_callback, "Telegram")
     # att_event.connect("query-tooltip", self.tooltip_callback, "Arch Linux Tweak Tool")
 
     hbox_social_img.add(fb_event)
