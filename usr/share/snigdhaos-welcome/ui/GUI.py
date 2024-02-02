@@ -143,7 +143,7 @@ def GUI(self, Gtk, GdkPixbuf):
 
     fb_event = Gtk.EventBox()
     pbfb = GdkPixbuf.Pixbuf().new_from_file_at_size(
-        os.path.join(base_dir, "images/social-media.png"), 64, 64
+        os.path.join(base_dir, "images/facebook.png"), 64, 64
     )
     fbimage = Gtk.Image().new_from_pixbuf(pbfb)
     fb_event.add(fbimage)
