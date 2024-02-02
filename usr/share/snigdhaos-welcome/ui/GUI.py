@@ -616,10 +616,10 @@ def GUI(self, Gtk, GdkPixbuf):
 
     label_credits = Gtk.Label(xalign=0, yalign=0)
     label_credits.set_markup(
-        f"Brad Heffernan\n"
-        f"Erik Dubois\n"
-        f"Fennec\n"
         f"Eshanized\n"
+        f"Iconized\n"
+        f"Snigdha\n"
+        # f"Eshanized\n"
         # f"For support, or to report any issues use <b><a href='{app_discord}' title='{app_discord}'>Discord</a></b>"
     )
     # label_credits.set_markup(

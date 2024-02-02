@@ -52,7 +52,7 @@ label#label_style {
     border-radius: 0px;
     font-size: 16px;
     font-weight: bold;
-    color: cyan;
+    color: pink;
 }
 label#label_style_eshan {
     background-color: @theme_base_color;
@@ -64,7 +64,7 @@ label#label_style_eshan {
     border-radius: 0px;
     font-size: 16px;
     font-weight: bold;
-    color: blood-red;
+    color: #2B65EC;
 }
 """
 
