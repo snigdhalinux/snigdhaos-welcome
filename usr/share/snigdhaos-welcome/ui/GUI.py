@@ -1,6 +1,5 @@
 # Author: Erik Dubois [Arcolinux]
-#
-#
+# Adopted for Snigdha OS
 
 import os
 import getpass
