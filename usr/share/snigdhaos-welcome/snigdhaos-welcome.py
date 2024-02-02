@@ -4,10 +4,8 @@
 # =================================================================
 import gi
 import os
-
 import conflicts
 # import sys
-
 # import wnck
 import subprocess
 import threading
