@@ -1,6 +1,6 @@
 <h1 align="center" id="title">SNIGDHA OS WELCOME</h1>
 
-<p id="description">Snigdha OS Welcome App: It will help you to install Snigdha OS from a live environment.</p>
+<p id="description" align="center">Snigdha OS Welcome App: It will help you to install Snigdha OS from a live environment.</p>
 
 <h2>Screenshots:</h2>
 
